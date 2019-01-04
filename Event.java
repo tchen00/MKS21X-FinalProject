@@ -6,4 +6,27 @@ public class Event {
   private int endTime;
   private String note;
 
+  public Event() {
+    //CODE HERE
+  }
+
+  public String toString(){
+    //CODE HERE
+    return null;
+  }
+
+  public String getName(){
+    //CODE HERE
+    return null;
+  }
+
+  public String getDate(){
+    //CODE HERE
+    return null;
+  }
+
+  public String getNotes(){
+    //CODE HERE
+    return null; 
+  }
 }
