@@ -3,7 +3,7 @@
 
 
 # Development Logs  
-## Jan 3, 2018
+## Jan 3, 2019
 - **Grace**
 	- Today was the first day of working on the actual project. I...
 		- wrote in the fields and methods from our UML into the OurCalendar class
