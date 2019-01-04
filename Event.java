@@ -1,5 +1,6 @@
 public class Event {
   private String name;
+  private int year;
   private int month;
   private int day;
   private int startTime;
@@ -11,22 +12,36 @@ public class Event {
   }
 
   public String toString(){
-    //CODE HERE
     return null;
   }
 
   public String getName(){
-    //CODE HERE
-    return null;
+    return name;
   }
 
   public String getDate(){
-    //CODE HERE
-    return null;
+    return "" + month + day + year;
   }
 
   public String getNotes(){
-    //CODE HERE
-    return null; 
+    return note;
+  }
+
+  public void setName(String input){
+    name = input;
+  }
+
+  public void setDate(int y, int m, int d){
+    year = y;
+    month = m;
+    day = d;
+  }
+
+  public void setTime(int start, int end){
+    startTime = start;
+    endTime = end;
+  }
+  public void addNote(String n){
+    note = n;
   }
 }
