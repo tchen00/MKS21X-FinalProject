@@ -4,7 +4,7 @@
 
 # Development Logs  
 ## Jan 3, 2018
-- Grace
+- **Grace**
 	- Today was the first day of working on the actual project. I...
 		- wrote in the fields and methods from our UML into the OurCalendar class
 		- wrote in the fields from our UML into the Event class
