@@ -27,6 +27,21 @@ public class Event {
 
   public String getNotes(){
     //CODE HERE
-    return null; 
+    return null;
+  }
+
+  public void setName(String input){
+    //CODE HERE
+  }
+
+  public void setDate(String input){
+    //CODE HERE
+  }
+
+  public void setTime(int time){
+    //CODE HERE
+  }
+  public void addNote(String note){
+    //CODE HERE
   }
 }
