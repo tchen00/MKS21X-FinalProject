@@ -48,6 +48,7 @@ public class CalendarViews {
     }
     // THIS IS NOT THAT MONTH SPECIFICALLY
     result += day;
+    result -= 1;
     return result;
   }
 
