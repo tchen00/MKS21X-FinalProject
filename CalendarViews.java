@@ -66,8 +66,11 @@ public class CalendarViews {
 
   }
 
+  // returns weekday the month starts on (Sun=0, Mon=1 etc)
   public int getFirstDayOfMonth(int month, int year) {
-    return -1;
+    // Jan 1 2019 = 2 (Tues)
+    int days = numberOfDays(1, month, year);
+    return ((days % 7) + 2) % 7;
   }
 
   public int getFirstDayOfYear(int year) {
@@ -84,12 +87,14 @@ public class CalendarViews {
 
   public static void main (String[] args) {
     CalendarViews test = new CalendarViews("yes");
-    System.out.println(test.numberOfDays(1, 1, 2019));
+/*    System.out.println(test.numberOfDays(1, 1, 2019));
     System.out.println(test.numberOfDays(1, 2, 2019));
     System.out.println(test.numberOfDays(23, 10, 2019));
     System.out.println(test.numberOfDays(1, 1, 2020));
     System.out.println(test.numberOfDays(1, 7, 2020));
-    System.out.println(test.numberOfDays(1, 1, 2021));
+    System.out.println(test.numberOfDays(1, 1, 2021)); */
+    System.out.println(test.getFirstDayOfMonth(8, 2019));
+
   }
 
 }
