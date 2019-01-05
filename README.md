@@ -14,3 +14,8 @@
 	- learned about README.md and the formatting (made way too many unneccessary commits)
 	- learned about branching and figured out merge conflicts were a thing not to play around with
 ### DAY 2 - Jan 4, 2019
+- **Grace**
+	- created CalendarViews class with empty methods and fields
+	- wrote numberOfDays to calculate how many days from Jan 1 2019 a specific day is
+	- using numberOfDays, wrote getFirstDayOfMonth (these will be useful for printing out calendars
+	- tested both in temporary main in CalendarViews, debugged (will test more later on)
