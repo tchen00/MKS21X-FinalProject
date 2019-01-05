@@ -37,7 +37,7 @@ public class CalendarViews {
     // adding days from months
     for (int i = month - 1; i > 0; i--) {
       int tempDays = 0; // to keep track of how many days are in that month
-      if (i == 12 || i == 10 || i == 8 || i == 7 || i == 5 || i == 3 || i == 1) {
+      if ((i > 7 && i % 2 == 0) || (i < 8 && i % 2 == 1)) {
         tempDays = 31;
       } else if (i == 2) {
         tempDays = 28;
@@ -46,9 +46,7 @@ public class CalendarViews {
       }
       result += tempDays;
     }
-    // THIS IS NOT THAT MONTH SPECIFICALLY
-    result += day;
-    result -= 1;
+    result += day - 1; // shouldn't count Jan 1st
     return result;
   }
 
@@ -86,7 +84,12 @@ public class CalendarViews {
 
   public static void main (String[] args) {
     CalendarViews test = new CalendarViews("yes");
+    System.out.println(test.numberOfDays(1, 1, 2019));
+    System.out.println(test.numberOfDays(1, 2, 2019));
+    System.out.println(test.numberOfDays(23, 10, 2019));
     System.out.println(test.numberOfDays(1, 1, 2020));
+    System.out.println(test.numberOfDays(1, 7, 2020));
+    System.out.println(test.numberOfDays(1, 1, 2021));
   }
 
 }
