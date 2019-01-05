@@ -25,6 +25,8 @@ public class CalendarViews {
   // returns number of days since Jan 1 2019
   public int numberOfDays(int day, int month, int year) {
     int result = 0;
+    boolean leapYear = false;
+    if (year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0)) leapYear = true;
     // adding days from years
     for (int i = year - 1; i >= 2019; i--) {
       if (i % 4 == 0 && !(i % 100 == 0 && i % 400 != 0)) {
@@ -33,14 +35,14 @@ public class CalendarViews {
         result += 365;
       }
     }
-    // THIS IS NOW 2019 (NOT A LEAP YEAR)
     // adding days from months
     for (int i = month - 1; i > 0; i--) {
       int tempDays = 0; // to keep track of how many days are in that month
       if ((i > 7 && i % 2 == 0) || (i < 8 && i % 2 == 1)) {
         tempDays = 31;
       } else if (i == 2) {
-        tempDays = 28;
+        if (leapYear) tempDays = 29;
+        else tempDays = 28;
       } else {
         tempDays = 30;
       }
@@ -94,7 +96,12 @@ public class CalendarViews {
     System.out.println(test.numberOfDays(1, 7, 2020));
     System.out.println(test.numberOfDays(1, 1, 2021)); */
     System.out.println(test.getFirstDayOfMonth(8, 2019));
-
+    System.out.println(test.getFirstDayOfMonth(7, 2019));
+    System.out.println(test.getFirstDayOfMonth(6, 2019));
+    System.out.println(test.getFirstDayOfMonth(12, 2019));
+    System.out.println(test.getFirstDayOfMonth(1, 2020));
+    System.out.println(test.getFirstDayOfMonth(5, 2020));
+    System.out.println(test.getFirstDayOfMonth(10, 2023));
   }
 
 }
