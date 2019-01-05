@@ -4,7 +4,7 @@
 
 ## :memo: Development Logs  
 ### DAY 1 - Jan 3, 2019
-- **Grace**
+- **Grace** :octocat:
 	- wrote in the fields and methods from our UML into the OurCalendar class
 	- wrote in the fields from our UML into the Event class
 	- made a bunch of extra (unnecessary) commits during the process of learning branching
@@ -14,8 +14,12 @@
 	- learned about README.md and the formatting (made way too many unneccessary commits)
 	- learned about branching and figured out merge conflicts were a thing not to play around with
 ### DAY 2 - Jan 4, 2019
-- **Grace**
+- **Grace** :octocat:
 	- created CalendarViews class with empty methods and fields
 	- wrote numberOfDays to calculate how many days from Jan 1 2019 a specific day is
 	- using numberOfDays, wrote getFirstDayOfMonth (these will be useful for printing out calendars
 	- tested both in temporary main in CalendarViews, debugged (will test more later on)
+- **Tammy** :hatched_chick:
+	- finished the template for Event class + fix changes on prototype 
+	- filled in all the accessors/set methods in Event class 
+	- played around with lanterna and the jar file 
