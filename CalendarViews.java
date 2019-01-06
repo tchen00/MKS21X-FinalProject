@@ -7,7 +7,7 @@ public class CalendarViews {
   private int endDate;
 
   public CalendarViews(String v) {
-    views = v;
+    view = v;
   }
 
   public String getView() {
@@ -25,18 +25,18 @@ public class CalendarViews {
   // returns number of days since Jan 1 2019
   public int numberOfDays(int day, int month, int year) {
     if (year < 2019 || month > 12 || month < 1) {
-      throw new Exception("Your date inputed is either not real or before Jan 1 2019");
+      throw new IllegalArgumentException("Your date inputed is either not real or before Jan 1 2019");
     }
     if (day > 31 || (month == 2 && day > 29) ||
         (((month < 7 && month % 2 == 0) || (month > 8 && month % 2 == 1)) && day > 30)) {
-      throw new Exception("Your date inputed is either not real or before Jan 1 2019");
+      throw new IllegalArgumentException("Your date inputed is either not real or before Jan 1 2019");
     }
     int result = 0;
     boolean leapYear = false;
     if (year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0)) leapYear = true;
     // adding days from years
     if (!leapYear && month == 2 && day > 28) {
-      throw new Exception("Your date inputed is either not real or before Jan 1 2019");
+      throw new IllegalArgumentException("Your date inputed is either not real or before Jan 1 2019");
     }
     for (int i = year - 1; i >= 2019; i--) {
       if (i % 4 == 0 && !(i % 100 == 0 && i % 400 != 0)) {
@@ -99,19 +99,32 @@ public class CalendarViews {
 
   public static void main (String[] args) {
     CalendarViews test = new CalendarViews("yes");
+    try {
+      System.out.println(test.numberOfDays(28, 2, 2019));
+    //  System.out.println(test.numberOfDays(1, 1, 2018));
+  //    System.out.println(test.numberOfDays(1, 13, 2019));
+  //    System.out.println(test.numberOfDays(1, 0, 2019));
+    //  System.out.println(test.numberOfDays(30, 2, 2020));
+      System.out.println(test.numberOfDays(29, 2, 2020));
+  //    System.out.println(test.numberOfDays(29, 2, 2019));
+    //  System.out.println(test.numberOfDays(31, 9, 2019));
+  //    System.out.println(test.numberOfDays(32, 1, 2019));
+    } catch (Exception e) {
+      System.out.println(e);
+    }
 /*    System.out.println(test.numberOfDays(1, 1, 2019));
     System.out.println(test.numberOfDays(1, 2, 2019));
     System.out.println(test.numberOfDays(23, 10, 2019));
     System.out.println(test.numberOfDays(1, 1, 2020));
     System.out.println(test.numberOfDays(1, 7, 2020));
     System.out.println(test.numberOfDays(1, 1, 2021)); */
-    System.out.println(test.getFirstDayOfMonth(8, 2019));
+/*    System.out.println(test.getFirstDayOfMonth(8, 2019));
     System.out.println(test.getFirstDayOfMonth(7, 2019));
     System.out.println(test.getFirstDayOfMonth(6, 2019));
     System.out.println(test.getFirstDayOfMonth(12, 2019));
     System.out.println(test.getFirstDayOfMonth(1, 2020));
     System.out.println(test.getFirstDayOfMonth(5, 2020));
-    System.out.println(test.getFirstDayOfMonth(10, 2023));
+    System.out.println(test.getFirstDayOfMonth(10, 2023));*/
   }
 
 }
