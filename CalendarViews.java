@@ -10,12 +10,14 @@ public class CalendarViews {
     view = v;
   }
 
+  // returns the view selected
   public String getView() {
-    return "";
+    return view;
   }
 
+  // changes the view
   public void setView(String s) {
-
+    view = s;
   }
 
   public String viewDate() { // might not be useful later
@@ -95,7 +97,9 @@ public class CalendarViews {
     return -1;
   }
 
-  public String getWeekday(int day) {
+  // if the user asks, return weekday that date is on
+  public String getWeekday(int day, int month, int year) {
+    int day = (getFirstDayOfMonth(month, year) + day - 1) % 7;
     return "";
   }
 
