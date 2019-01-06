@@ -85,8 +85,10 @@ public class CalendarViews {
     return ((days % 7) + 2) % 7;
   }
 
+  // return sweekday the year starts on
   public int getFirstDayOfYear(int year) {
-    return -1;
+    int days = numberOfDays(1,1,year);
+    return ((days % 7) + 2) % 7;
   }
 
   public int getFirstDayOfWeek(int startDate, int month, int year) {
@@ -125,6 +127,11 @@ public class CalendarViews {
     System.out.println(test.getFirstDayOfMonth(1, 2020));
     System.out.println(test.getFirstDayOfMonth(5, 2020));
     System.out.println(test.getFirstDayOfMonth(10, 2023));*/
+    System.out.println(test.getFirstDayOfYear(2020));
+    System.out.println(test.getFirstDayOfYear(2021));
+    System.out.println(test.getFirstDayOfYear(2022));
+    System.out.println(test.getFirstDayOfYear(2023));
+    System.out.println(test.getFirstDayOfYear(2050));
   }
 
 }
