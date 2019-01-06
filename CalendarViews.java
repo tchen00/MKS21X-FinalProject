@@ -7,7 +7,7 @@ public class CalendarViews {
   private int endDate;
 
   public CalendarViews(String v) {
-
+    views = v;
   }
 
   public String getView() {
@@ -24,10 +24,20 @@ public class CalendarViews {
 
   // returns number of days since Jan 1 2019
   public int numberOfDays(int day, int month, int year) {
+    if (year < 2019 || month > 12 || month < 1) {
+      throw new Exception("Your date inputed is either not real or before Jan 1 2019");
+    }
+    if (day > 31 || (month == 2 && day > 29) ||
+        (((month < 7 && month % 2 == 0) || (month > 8 && month % 2 == 1)) && day > 30)) {
+      throw new Exception("Your date inputed is either not real or before Jan 1 2019");
+    }
     int result = 0;
     boolean leapYear = false;
     if (year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0)) leapYear = true;
     // adding days from years
+    if (!leapYear && month == 2 && day > 28) {
+      throw new Exception("Your date inputed is either not real or before Jan 1 2019");
+    }
     for (int i = year - 1; i >= 2019; i--) {
       if (i % 4 == 0 && !(i % 100 == 0 && i % 400 != 0)) {
         result += 366;
