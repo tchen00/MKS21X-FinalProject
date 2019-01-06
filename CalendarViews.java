@@ -99,8 +99,19 @@ public class CalendarViews {
 
   // if the user asks, return weekday that date is on
   public String getWeekday(int day, int month, int year) {
-    int day = (getFirstDayOfMonth(month, year) + day - 1) % 7;
-    return "";
+    int d = (getFirstDayOfMonth(month, year) + day - 1) % 7;
+    return convertToDay(d);
+  }
+
+  private String convertToDay(int n) {
+    if (n == 0) return "Sunday";
+    if (n == 1) return "Monday";
+    if (n == 2) return "Tuesday";
+    if (n == 3) return "Wednesday";
+    if (n == 4) return "Thursday";
+    if (n == 5) return "Friday";
+    if (n == 6) return "Saturday";
+    return null;
   }
 
   public static void main (String[] args) {
@@ -130,12 +141,18 @@ public class CalendarViews {
     System.out.println(test.getFirstDayOfMonth(12, 2019));
     System.out.println(test.getFirstDayOfMonth(1, 2020));
     System.out.println(test.getFirstDayOfMonth(5, 2020));
-    System.out.println(test.getFirstDayOfMonth(10, 2023));*/
+    System.out.println(test.getFirstDayOfMonth(10, 2023));
     System.out.println(test.getFirstDayOfYear(2020));
     System.out.println(test.getFirstDayOfYear(2021));
     System.out.println(test.getFirstDayOfYear(2022));
     System.out.println(test.getFirstDayOfYear(2023));
-    System.out.println(test.getFirstDayOfYear(2050));
+    System.out.println(test.getFirstDayOfYear(2050)); */
+    System.out.println(test.getWeekday(1,1,2019));
+    System.out.println(test.getWeekday(1,1,2020));
+    System.out.println(test.getWeekday(1,1,2021));
+    System.out.println(test.getWeekday(1,1,2022));
+    System.out.println(test.getWeekday(1,1,2023));
+    System.out.println(test.getWeekday(1,1,2050));
   }
 
 }
