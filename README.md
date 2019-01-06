@@ -23,3 +23,10 @@
 	- finished the template for Event class + fix changes on prototype 
 	- filled in all the accessors/set methods in Event class 
 	- played around with lanterna and the jar file 
+### DAY 3 - Jan 5, 2019
+- **Grace** :octocat:
+	- added exceptions to numberOfDays
+	- wrote getFirstDayOfYear, getWeekday
+	- added private method that converts number 0-6 to the weekday (will be useful in other methods as well)
+	- filled in one-line get and set methods
+	- deleted getFirstDayOfWeek (would not have been useful)
