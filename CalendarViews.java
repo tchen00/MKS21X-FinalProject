@@ -93,10 +93,6 @@ public class CalendarViews {
     return ((days % 7) + 2) % 7;
   }
 
-  public int getFirstDayOfWeek(int startDate, int month, int year) {
-    return -1;
-  }
-
   // if the user asks, return weekday that date is on
   public String getWeekday(int day, int month, int year) {
     int d = (getFirstDayOfMonth(month, year) + day - 1) % 7;
