@@ -40,7 +40,8 @@ public class CSVTammy {
     out.append(",");
     out.append("amazing");
     out.append("It's");
-    out.append(",");
+    // out.newLine();
+    out.append("\n"); // adds to NEXT ROW *************
     out.append("really");
     out.append(",");
     out.append("amazing");
