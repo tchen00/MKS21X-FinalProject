@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class CSV {
+public class CSVGrace {
   public static void main(String[] args) throws FileNotFoundException, IOException{
     BufferedReader br = new BufferedReader(new FileReader("test.csv"));
     String line = "";
