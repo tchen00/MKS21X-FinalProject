@@ -33,3 +33,9 @@
 - **Tammy** :smile:
 	- fix prototype
 	- 
+### DAY 4 - Jan 6, 2019
+- **Grace** :octocat:
+	- learned CSV stuff about writing, appending, and reading csv files
+	- made changes to prototype
+	- wrote getStartOfWeek that returns the date week #_ starts on (might be what getFirstDayOfWeek should have been)
+	- note to self: many methods in CalendarViews need EXCEPTIONS :rotating_light:
