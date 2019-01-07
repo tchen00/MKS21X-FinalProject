@@ -3,10 +3,10 @@ import java.io.*;
 public class CSVTammy {
   public static void main(String[] args) throws FileNotFoundException, IOException{
     String csvFile = "sampleCalendar.csv";
-    BufferedReader br = null;
+    BufferedReader br = new BufferedReader(new FileReader("sampleCalendar.csv"));
     String line = "";
     String cvsSplitBy = ",";
-
+/*
     try {
 
         br = new BufferedReader(new FileReader(csvFile));
@@ -31,7 +31,27 @@ public class CSVTammy {
             }
         }
     }
+*/
+    FileWriter fw = new FileWriter("sampleCalendar.csv", true);
+    PrintWriter out = new PrintWriter(fw);
+    out.append("This");
+    out.append(",");
+    out.append("is");
+    out.append(",");
+    out.append("amazing");
+    out.append("It's");
+    out.append(",");
+    out.append("really");
+    out.append(",");
+    out.append("amazing");
+    out.flush();
 
+       //Close the Print Writer
+    out.close();
+
+       //Close the File Writer
+    fw.close();
+    br.close();
     }
 
 
