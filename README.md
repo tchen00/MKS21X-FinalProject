@@ -32,9 +32,15 @@
 	- deleted getFirstDayOfWeek (would not have been useful)
 - **Tammy** :smile:
 	- fix prototype
+	- fell asleep in the middle of doing the project :cry:
 ### DAY 4 - Jan 6, 2019
 - **Grace** :octocat:
 	- learned CSV stuff about writing, appending, and reading csv files
 	- made changes to prototype
 	- wrote getStartOfWeek that returns the date week #_ starts on (might be what getFirstDayOfWeek should have been)
 	- note to self: many methods in CalendarViews need EXCEPTIONS :rotating_light:
+- **Tammy** :sweat:
+	- finished making changes to the prototype (more to come!)
+	- learned about CSV reading and appending in java
+		- realized Scanner was used for .txt files 
+	- tested a main to see how to read and write in new columns and rows
