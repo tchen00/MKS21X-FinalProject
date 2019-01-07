@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class CalendarViews {
+public class CalendarViews extends Date {
   private String view;
   private int month;
   private int startDate;
@@ -113,17 +113,6 @@ public class CalendarViews {
     return month+"/"+d+"/"+year;
   }
 
-  private String convertToDay(int n) {
-    if (n == 0) return "Sunday";
-    if (n == 1) return "Monday";
-    if (n == 2) return "Tuesday";
-    if (n == 3) return "Wednesday";
-    if (n == 4) return "Thursday";
-    if (n == 5) return "Friday";
-    if (n == 6) return "Saturday";
-    return null;
-  }
-
   public static void main (String[] args) {
     CalendarViews test = new CalendarViews("yes");
   /*  try {
@@ -156,17 +145,18 @@ public class CalendarViews {
     System.out.println(test.getFirstDayOfYear(2021));
     System.out.println(test.getFirstDayOfYear(2022));
     System.out.println(test.getFirstDayOfYear(2023));
-    System.out.println(test.getFirstDayOfYear(2050));
+    System.out.println(test.getFirstDayOfYear(2050)); */
     System.out.println(test.getWeekday(1,1,2019));
     System.out.println(test.getWeekday(1,1,2020));
     System.out.println(test.getWeekday(1,1,2021));
     System.out.println(test.getWeekday(1,1,2022));
     System.out.println(test.getWeekday(1,1,2023));
-    System.out.println(test.getWeekday(1,1,2050)); */
-    System.out.println(test.getStartOfWeek(1,1,2019));
+    System.out.println(test.getWeekday(1,1,2050));
+/*    System.out.println(test.getStartOfWeek(1,1,2019));
     System.out.println(test.getStartOfWeek(2,1,2019));
     System.out.println(test.getStartOfWeek(3,1,2019));
-    System.out.println(test.getStartOfWeek(4,1,2019));
+    System.out.println(test.getStartOfWeek(4,1,2019)); */
+    System.out.println(test.convertToDay(5));
   }
 
 }
