@@ -32,7 +32,6 @@
 	- deleted getFirstDayOfWeek (would not have been useful)
 - **Tammy** :smile:
 	- fix prototype
-	- 
 ### DAY 4 - Jan 6, 2019
 - **Grace** :octocat:
 	- learned CSV stuff about writing, appending, and reading csv files
