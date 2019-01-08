@@ -16,6 +16,18 @@ public class Date {
     return null;
   }
 
+  public boolean isLeapYear(int year) {
+    return year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0);
+  }
+
+  public int daysInMonth(int m, int y) {
+    boolean leapYear = isLeapYear(y);
+    if (leapYear && m == 2) return 29;
+    else if (m == 2) return 28;
+    if ((m > 7 && m % 2 == 0) || (m < 8 && m % 2 == 1)) return 31;
+    return 30;
+  }
+
   public String convertToDay(int n) {
     if (n == 0) return "Sunday";
     if (n == 1) return "Monday";
@@ -28,13 +40,13 @@ public class Date {
   }
 
   public int convertToNum(String d) {
-    if (d.equals("Sun")) return 0;
-    if (d.equals("Mon")) return 1;
-    if (d.equals("Tues")) return 2;
-    if (d.equals("Wed")) return 3;
-    if (d.equals("Thurs")) return 4;
-    if (d.equals("Fri")) return 5;
-    if (d.equals("Sat")) return 6;
+    if (d.equals("Sunday")) return 0;
+    if (d.equals("Monday")) return 1;
+    if (d.equals("Tuesday")) return 2;
+    if (d.equals("Wednesday")) return 3;
+    if (d.equals("Thursday")) return 4;
+    if (d.equals("Friday")) return 5;
+    if (d.equals("Saturday")) return 6;
     return -1;
   }
 
