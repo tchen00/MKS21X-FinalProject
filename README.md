@@ -48,6 +48,7 @@
 - **Grace** :octocat: (Grace struggled today :persevere:)
 	- created Date class to enclose all generic methods such as convertToDay
 	- extended Date in CalendarViews
+	- wrote getData in CalendarViews (not yet tested)
 - **Tammy** :disappointed_relieved:
 	- learned about asking for user input
 	- wrote Event class constructor
