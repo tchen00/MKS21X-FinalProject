@@ -7,6 +7,7 @@ public class Event {
   private int endTime;
   private String note;
 
+  // constructor with everything
   public Event(String nameE, int yearE, int monthE, int dayE, int startTimeE, int endTimeE, String noteE) {
     name = nameE;
     year = yearE;
@@ -17,6 +18,10 @@ public class Event {
     note = noteE;
   }
 
+  // empty constructor
+  public Event(){
+
+  }
   public String toString(){
     return "This event is: " + this.getName() + this.getDate() + this.getNotes(); // still need to figure out a way to print time
   }
