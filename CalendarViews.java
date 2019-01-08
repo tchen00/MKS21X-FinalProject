@@ -1,13 +1,15 @@
 import java.io.*;
+import java.util.*;
 
 public class CalendarViews extends Date {
   private String view;
   private int month;
   private int startDate;
   private int endDate;
-  private String[][] events;
+  private ArrayList<Event> events;
 
   public CalendarViews(String v) {
+    events = new ArrayList<Event>();
     view = v;
   }
 
@@ -77,11 +79,19 @@ public class CalendarViews extends Date {
     return "";
   }
 
-  public void getData(File f) {
+  // collects data and fills in events array
+  /// Event(String name, int year, int month, int day, int startTime, int endTime, note)
+  public void getData(File f) throws FileNotFoundException, IOException {
     BufferedReader br = new BufferedReader(new FileReader(f));
     String line = "";
     while ((line = br.readLine()) != null) {
-
+      String[] rows = line.split(",");
+      // [name,year,month,day,startTime,endTime,note]
+      Event e = new Event(rows[0],Integer.parseInt(rows[1]),
+                          Integer.parseInt(rows[2]),Integer.parseInt(rows[3]),
+                          Integer.parseInt(rows[4]),Integer.parseInt(rows[5]),
+                          rows[6]);
+      events.add(e);
     }
   }
 
