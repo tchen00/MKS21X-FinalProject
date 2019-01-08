@@ -1,4 +1,4 @@
-public class Event {
+public class Event extends Date{
   private String name;
   private int year;
   private int month;
@@ -22,6 +22,7 @@ public class Event {
   public Event(){
 
   }
+
   public String toString(){
     return "This event is: " + this.getName() + this.getDate() + this.getNotes(); // still need to figure out a way to print time
   }
