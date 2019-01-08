@@ -8,7 +8,13 @@ public class Event {
   private String note;
 
   public Event(String nameE, int yearE, int monthE, int dayE, int startTimeE, int endTimeE, String noteE) {
-    //CODE HERE
+    name = nameE;
+    year = yearE;
+    month = monthE;
+    day = dayE;
+    startTime = startTimeE;
+    endTime = endTimeE;
+    note = noteE; 
   }
 
   public String toString(){
