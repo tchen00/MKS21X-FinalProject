@@ -7,15 +7,38 @@ public class Driver {
   public static void main(String[] args) throws IOException {
        Event a = new Event();
        BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
-       System.out.print("Input your event name :");
+       System.out.println("Input event name: ");
        String myName = myReader.readLine();
-       Event.setName(myName);
+       a.setName(myName);
        System.out.println("Event name is : "+ myName);
-       Event.toString();
+       System.out.print("Input your event year :");
+       String myYear = myReader.readLine();
+       System.out.print("Input your event month :");
+       String myMonth = myReader.readLine();
+       System.out.print("Input your event day :");
+       String myDay = myReader.readLine();
+       a.setDate(Integer.parseInt(myYear),Integer.parseInt(myMonth),Integer.parseInt(myDay));
+       System.out.print("Input your event start time :");
+       String myStartTime = myReader.readLine();
+       System.out.print("Input your event end time :");
+       String myEndTime = myReader.readLine();
+       a.setTime(myStartTime, myEndTime);
+       System.out.print("Input any additional notes you may have:");
+       String myNote = myReader.readLine();
+       a.addNote(myNote);
+       System.out.println("---------------------------------------------------------------");
+       System.out.println(a.toString());
       // System.out.print("Input your start time :");
       // myName = myReader.readLine();
       // System.out.println("Event start time is : "+ myName);
       // String endTime = myRead.readLine();
+
+/*
+    TO - DO
+      -  figure out how to calculator time from start to end
+      -  fix the date function
+      -  save the data in CSV file
+      */
 
    }
 }

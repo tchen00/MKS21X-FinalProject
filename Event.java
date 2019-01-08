@@ -1,14 +1,14 @@
-public class Event {
+public class Event extends Date{
   private String name;
   private int year;
   private int month;
   private int day;
-  private int startTime;
-  private int endTime;
+  private String startTime;
+  private String endTime;
   private String note;
 
   // constructor with everything
-  public Event(String nameE, int yearE, int monthE, int dayE, int startTimeE, int endTimeE, String noteE) {
+  public Event(String nameE, int yearE, int monthE, int dayE, String startTimeE, String endTimeE, String noteE) {
     name = nameE;
     year = yearE;
     month = monthE;
@@ -22,8 +22,9 @@ public class Event {
   public Event(){
 
   }
+
   public String toString(){
-    return "This event is: " + this.getName() + this.getDate() + this.getNotes(); // still need to figure out a way to print time
+    return "Event: " + this.getName() + "\n" + "Date & Time: " + this.getDate() + "\t"+ this.getStartTime() + " - " + this.getEndTime()+ "\n" + "Notes: " + this.getNotes(); // still need to figure out a way to print time
   }
 
   public String getName(){
@@ -31,11 +32,19 @@ public class Event {
   }
 
   public String getDate(){
-    return "" + month + day + year;
+    return "" + month + "/" + day + "/" + year;
   }
 
   public String getNotes(){
     return note;
+  }
+
+  public String getStartTime(){
+    return startTime;
+  }
+
+  public String getEndTime(){
+    return endTime;
   }
 
   public void setName(String input){
@@ -48,7 +57,7 @@ public class Event {
     day = d;
   }
 
-  public void setTime(int start, int end){
+  public void setTime(String start, String end){
     startTime = start;
     endTime = end;
   }
