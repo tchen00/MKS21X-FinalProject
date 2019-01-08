@@ -42,9 +42,13 @@
 - **Tammy** :sweat:
 	- finished making changes to the prototype (more to come!)
 	- learned about CSV reading and appending in java
-		- realized Scanner was used for .txt files 
+		- realized Scanner was used for .txt files
 	- tested a main to see how to read and write in new columns and rows
 ### DAY 5 - Jan 7, 2019
-- **Grace** :octocat: (Grace struggled today :sad:)
+- **Grace** :octocat: (Grace struggled today :persevere:)
 	- created Date class to enclose all generic methods such as convertToDay
 	- extended Date in CalendarViews
+- **Tammy** :disappointed_relieved:
+	- learned about asking for user input
+	- wrote Event class constructor
+	- made Driver to test user input 
