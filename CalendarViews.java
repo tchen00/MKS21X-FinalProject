@@ -5,6 +5,7 @@ public class CalendarViews extends Date {
   private int month;
   private int startDate;
   private int endDate;
+  private String[][] events;
 
   public CalendarViews(String v) {
     view = v;
@@ -77,7 +78,11 @@ public class CalendarViews extends Date {
   }
 
   public void getData(File f) {
+    BufferedReader br = new BufferedReader(new FileReader(f));
+    String line = "";
+    while ((line = br.readLine()) != null) {
 
+    }
   }
 
   // returns weekday the month starts on (Sun=0, Mon=1 etc)
