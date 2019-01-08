@@ -67,15 +67,27 @@ public class CalendarViews extends Date {
     return result;
   }
 
-  public String printYear() {
+  public String printYear(int y) {
     return "";
   }
 
-  public String printMonth() {
-    return "";
+  public String printMonth(int m, int y) {
+    String result = "";
+    result += convertToMonth(m)+y+"\n\n";
+    result += "Sun\tMon\tTues\tWed\tThurs\tFri\tSat\n";
+    int firstDay = getFirstDayOfMonth(m,y);
+    for (int i = 0; i < firstDay; i++) {
+      result += "\t";
+    }
+  //  for (int i = 1; )
+    return result;
   }
 
   public String printWeek() {
+    return "";
+  }
+
+  public String printDay() {
     return "";
   }
 
@@ -161,12 +173,12 @@ public class CalendarViews extends Date {
     System.out.println(test.getFirstDayOfYear(2022));
     System.out.println(test.getFirstDayOfYear(2023));
     System.out.println(test.getFirstDayOfYear(2050)); */
-    System.out.println(test.getWeekday(1,1,2019));
+  /*  System.out.println(test.getWeekday(1,1,2019));
     System.out.println(test.getWeekday(1,1,2020));
     System.out.println(test.getWeekday(1,1,2021));
     System.out.println(test.getWeekday(1,1,2022));
     System.out.println(test.getWeekday(1,1,2023));
-    System.out.println(test.getWeekday(1,1,2050));
+    System.out.println(test.getWeekday(1,1,2050));*/
 /*    System.out.println(test.getStartOfWeek(1,1,2019));
     System.out.println(test.getStartOfWeek(2,1,2019));
     System.out.println(test.getStartOfWeek(3,1,2019));
