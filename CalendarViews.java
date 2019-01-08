@@ -79,7 +79,13 @@ public class CalendarViews extends Date {
     for (int i = 0; i < firstDay; i++) {
       result += "\t";
     }
-  //  for (int i = 1; )
+    for (int i = 1; i <= daysInMonth(m,y); i++) {
+      result += i+"\t";
+      System.out.println(convertToNum(getWeekday(i,m,y)));
+      if (convertToNum(getWeekday(i,m,y)) == 6) {
+        result += "\n";
+      }
+    }
     return result;
   }
 
@@ -183,7 +189,7 @@ public class CalendarViews extends Date {
     System.out.println(test.getStartOfWeek(2,1,2019));
     System.out.println(test.getStartOfWeek(3,1,2019));
     System.out.println(test.getStartOfWeek(4,1,2019)); */
-    System.out.println(test.convertToDay(5));
+    System.out.println(test.printMonth(1,2019));
   }
 
 }
