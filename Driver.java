@@ -33,5 +33,12 @@ public class Driver {
       // System.out.println("Event start time is : "+ myName);
       // String endTime = myRead.readLine();
 
+/*
+    TO - DO
+      -  figure out how to calculator time from start to end
+      -  fix the date function
+      -  save the data in CSV file
+      */
+
    }
 }
