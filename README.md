@@ -51,4 +51,6 @@
 - **Tammy** :disappointed_relieved:
 	- learned about asking for user input
 	- wrote Event class constructor
-	- made Driver to test user input 
+		- made two constructors: one with all parameters, one empty
+	- made Driver to test user input
+		- implemented Event class and test constructor
