@@ -37,8 +37,7 @@ public class CalendarViews extends Date {
       throw new IllegalArgumentException("Your date inputed is either not real or before Jan 1 2019");
     }
     int result = 0;
-    boolean leapYear = false;
-    if (year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0)) leapYear = true;
+    boolean leapYear = isLeapYear(year);
     // adding days from years
     if (!leapYear && month == 2 && day > 28) {
       throw new IllegalArgumentException("Your date inputed is either not real or before Jan 1 2019");
@@ -53,14 +52,7 @@ public class CalendarViews extends Date {
     // adding days from months
     for (int i = month - 1; i > 0; i--) {
       int tempDays = 0; // to keep track of how many days are in that month
-      if ((i > 7 && i % 2 == 0) || (i < 8 && i % 2 == 1)) {
-        tempDays = 31;
-      } else if (i == 2) {
-        if (leapYear) tempDays = 29;
-        else tempDays = 28;
-      } else {
-        tempDays = 30;
-      }
+      tempDays = daysInMonth(i,year);
       result += tempDays;
     }
     result += day - 1; // shouldn't count Jan 1st
@@ -73,17 +65,17 @@ public class CalendarViews extends Date {
 
   public String printMonth(int m, int y) {
     String result = "";
-    result += convertToMonth(m)+y+"\n\n";
-    result += "Sun\tMon\tTues\tWed\tThurs\tFri\tSat\n";
+    result += convertToMonth(m)+" "+y+"\n\n";
+    result += "Sun\tMon\tTues\tWed\tThurs\tFri\tSat\n\n";
     int firstDay = getFirstDayOfMonth(m,y);
     for (int i = 0; i < firstDay; i++) {
       result += "\t";
     }
     for (int i = 1; i <= daysInMonth(m,y); i++) {
       result += i+"\t";
-      System.out.println(convertToNum(getWeekday(i,m,y)));
+      //System.out.println(convertToNum(getWeekday(i,m,y)));
       if (convertToNum(getWeekday(i,m,y)) == 6) {
-        result += "\n";
+        result += "\n\n";
       }
     }
     return result;
@@ -160,14 +152,14 @@ public class CalendarViews extends Date {
   //    System.out.println(test.numberOfDays(32, 1, 2019));
     } catch (Exception e) {
       System.out.println(e);
-    }
+    } */
     System.out.println(test.numberOfDays(1, 1, 2019));
     System.out.println(test.numberOfDays(1, 2, 2019));
     System.out.println(test.numberOfDays(23, 10, 2019));
     System.out.println(test.numberOfDays(1, 1, 2020));
     System.out.println(test.numberOfDays(1, 7, 2020));
     System.out.println(test.numberOfDays(1, 1, 2021));
-    System.out.println(test.getFirstDayOfMonth(8, 2019));
+/*    System.out.println(test.getFirstDayOfMonth(8, 2019));
     System.out.println(test.getFirstDayOfMonth(7, 2019));
     System.out.println(test.getFirstDayOfMonth(6, 2019));
     System.out.println(test.getFirstDayOfMonth(12, 2019));
@@ -189,7 +181,10 @@ public class CalendarViews extends Date {
     System.out.println(test.getStartOfWeek(2,1,2019));
     System.out.println(test.getStartOfWeek(3,1,2019));
     System.out.println(test.getStartOfWeek(4,1,2019)); */
-    System.out.println(test.printMonth(1,2019));
+/*    System.out.println(test.printMonth(1,2019));
+    System.out.println(test.printMonth(2,2019));
+    System.out.println(test.printMonth(2,2020));
+    System.out.println(test.printMonth(4,2019));*/
   }
 
 }
