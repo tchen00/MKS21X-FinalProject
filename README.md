@@ -55,3 +55,8 @@
 		- made two constructors: one with all parameters, one empty
 	- made Driver to test user input
 		- implemented Event class and test constructor
+### DAY 6 - Jan 8, 2019
+- **Grace** :octocat:
+	- added more useful methods to Date class, such as isLeapYear and daysInMonth
+	- wrote printMonth without event dots in CalendarViews
+	- condensed numberOfDays with new methods
