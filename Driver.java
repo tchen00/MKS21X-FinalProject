@@ -7,6 +7,7 @@ public class Driver {
   public static void main(String[] args) throws IOException {
        Event a = new Event();
        BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
+       System.out.println("Input event name: ");
        String myName = myReader.readLine();
        a.setName(myName);
        System.out.println("Event name is : "+ myName);
@@ -17,8 +18,16 @@ public class Driver {
        System.out.print("Input your event day :");
        String myDay = myReader.readLine();
        a.setDate(Integer.parseInt(myYear),Integer.parseInt(myMonth),Integer.parseInt(myDay));
-       a.toString();
-
+       System.out.print("Input your event start time :");
+       String myStartTime = myReader.readLine();
+       System.out.print("Input your event end time :");
+       String myEndTime = myReader.readLine();
+       a.setTime(myStartTime, myEndTime);
+       System.out.print("Input any additional notes you may have:");
+       String myNote = myReader.readLine();
+       a.addNote(myNote);
+       System.out.println("---------------------------------------------------------------");
+       System.out.println(a.toString());
       // System.out.print("Input your start time :");
       // myName = myReader.readLine();
       // System.out.println("Event start time is : "+ myName);
