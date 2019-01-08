@@ -14,11 +14,11 @@ public class Event {
     day = dayE;
     startTime = startTimeE;
     endTime = endTimeE;
-    note = noteE; 
+    note = noteE;
   }
 
   public String toString(){
-    return null;
+    return "This event is: " + this.getName() + this.getDate() + this.getNotes(); // still need to figure out a way to print time
   }
 
   public String getName(){
