@@ -87,7 +87,8 @@ public class CalendarViews extends Date {
 
   // collects data and fills in events array
   /// Event(String name, int year, int month, int day, int startTime, int endTime, note)
-  public void getData(File f) throws FileNotFoundException, IOException {
+  public void getData(String fileName) throws FileNotFoundException, IOException {
+    File f = new File(fileName);
     BufferedReader br = new BufferedReader(new FileReader(f));
     String line = "";
     while ((line = br.readLine()) != null) {
@@ -180,6 +181,12 @@ public class CalendarViews extends Date {
     System.out.println(test.printMonth(2,2019));
     System.out.println(test.printMonth(2,2020));
     System.out.println(test.printMonth(4,2019));*/
+    try {
+      test.getData("life.csv");
+      System.out.println(test.events.toString());
+    } catch (Exception e) {
+      System.out.println(e);
+    }
   }
 
 }
