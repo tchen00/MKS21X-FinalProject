@@ -67,3 +67,12 @@
 	- put in csv handler in Driver so Events can now be added into a CSV file
 		- for now, events are stored in life.csv 
 	- made changes to prototype AGAIN! :no_mouth:
+	
+### DAY 7 - Jan 9, 2019
+- **Grace** :octocat:
+
+- **Tammy** 
+	- [ ] take into consideration all the user input for Time in the Driver (EXCEPTIONS!)
+		- make sure length is no more than 5 
+		- search through string for : '/ split it / check to see if each individual char is a number  
+	- [ ] take into consideration AM and PM (or we could do military time)
