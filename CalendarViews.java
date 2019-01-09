@@ -8,9 +8,10 @@ public class CalendarViews extends Date {
   private int endDate;
   private ArrayList<Event> events;
 
-  public CalendarViews(String v) {
+  public CalendarViews(String v, String file) throws FileNotFoundException, IOException{
     events = new ArrayList<Event>();
     view = v;
+    getData(file);
   }
 
   // returns the view selected
@@ -61,15 +62,23 @@ public class CalendarViews extends Date {
 
   public String printMonth(int m, int y) {
     String result = "";
-    result += convertToMonth(m)+" "+y+"\n\n";
+    result += "\n"+convertToMonth(m).toUpperCase()+" "+y+"\n\n";
     result += "Sun\tMon\tTues\tWed\tThurs\tFri\tSat\n\n";
     int firstDay = getFirstDayOfMonth(m,y);
     for (int i = 0; i < firstDay; i++) {
       result += "\t";
     }
     for (int i = 1; i <= daysInMonth(m,y); i++) {
-      result += i+"\t";
+      result += i+" ";
+      String currentDate = m+"/"+i+"/"+y;
+      for (Event e : events) {
+        if (currentDate.equals(e.getDate())) {
+          result += "*";
+          // later, have to figure out tabbing and stuff if not too many stars
+        }
+      }
       //System.out.println(convertToNum(getWeekday(i,m,y)));
+      result += "\t";
       if (convertToNum(getWeekday(i,m,y)) == 6) {
         result += "\n\n";
       }
@@ -134,8 +143,8 @@ public class CalendarViews extends Date {
     return month+"/"+d+"/"+year;
   }
 
-  public static void main (String[] args) {
-    CalendarViews test = new CalendarViews("yes");
+  public static void main (String[] args) throws FileNotFoundException, IOException{
+    CalendarViews test = new CalendarViews("month","life.csv");
   /*  try {
       System.out.println(test.numberOfDays(28, 2, 2019));
     //  System.out.println(test.numberOfDays(1, 1, 2018));
@@ -177,16 +186,16 @@ public class CalendarViews extends Date {
     System.out.println(test.getStartOfWeek(2,1,2019));
     System.out.println(test.getStartOfWeek(3,1,2019));
     System.out.println(test.getStartOfWeek(4,1,2019)); */
-/*    System.out.println(test.printMonth(1,2019));
-    System.out.println(test.printMonth(2,2019));
+    System.out.println(test.printMonth(1,2019));
+/*    System.out.println(test.printMonth(2,2019));
     System.out.println(test.printMonth(2,2020));
     System.out.println(test.printMonth(4,2019));*/
-    try {
+  /*  try {
       test.getData("life.csv");
       System.out.println(test.events.toString());
     } catch (Exception e) {
       System.out.println(e);
-    }
+    } */
   }
 
 }
