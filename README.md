@@ -61,7 +61,7 @@
 	- wrote printMonth without event dots in CalendarViews
 	- condensed numberOfDays with new methods
 	- added system of dots to printMonth using demo csv file
-- **Tammy** :simple_smile: 
+- **Tammy** :relieved:
 	- put in a couple of new methods for Event class 
 	- fix Driver so now it can print out all the information of the event given user input 
 	- put in csv handler in Driver so Events can now be added into a CSV file
