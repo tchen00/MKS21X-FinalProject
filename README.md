@@ -73,4 +73,6 @@
 
 - **Tammy** 
 	- [ ] take into consideration all the user input for Time in the Driver (EXCEPTIONS!)
+		- make sure length is no more than 5 
+		- search through string for : '/ split it / check to see if each individual char is a number  
 	- [ ] take into consideration AM and PM (or we could do military time)
