@@ -67,3 +67,8 @@
 	- put in csv handler in Driver so Events can now be added into a CSV file
 		- for now, events are stored in life.csv 
 	- made changes to prototype AGAIN! :no_mouth:
+	
+### DAY 7 - Jan 9, 2019
+- **Grace** :octocat:
+
+- **Tammy** 
