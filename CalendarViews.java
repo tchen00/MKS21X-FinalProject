@@ -23,10 +23,6 @@ public class CalendarViews extends Date {
     view = s;
   }
 
-  public String viewDate() { // might not be useful later
-    return "";
-  }
-
   // returns number of days since Jan 1 2019
   public int numberOfDays(int day, int month, int year) {
     if (year < 2019 || month > 12 || month < 1) {
@@ -99,8 +95,7 @@ public class CalendarViews extends Date {
       // [name,year,month,day,startTime,endTime,note]
       Event e = new Event(rows[0],Integer.parseInt(rows[1]),
                           Integer.parseInt(rows[2]),Integer.parseInt(rows[3]),
-                          Integer.parseInt(rows[4]),Integer.parseInt(rows[5]),
-                          rows[6]);
+                          rows[4],rows[5],rows[6]);
       events.add(e);
     }
   }
@@ -153,12 +148,12 @@ public class CalendarViews extends Date {
     } catch (Exception e) {
       System.out.println(e);
     } */
-    System.out.println(test.numberOfDays(1, 1, 2019));
+  /*  System.out.println(test.numberOfDays(1, 1, 2019));
     System.out.println(test.numberOfDays(1, 2, 2019));
     System.out.println(test.numberOfDays(23, 10, 2019));
     System.out.println(test.numberOfDays(1, 1, 2020));
     System.out.println(test.numberOfDays(1, 7, 2020));
-    System.out.println(test.numberOfDays(1, 1, 2021));
+    System.out.println(test.numberOfDays(1, 1, 2021));*/
 /*    System.out.println(test.getFirstDayOfMonth(8, 2019));
     System.out.println(test.getFirstDayOfMonth(7, 2019));
     System.out.println(test.getFirstDayOfMonth(6, 2019));
