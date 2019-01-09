@@ -70,7 +70,8 @@
 	
 ### DAY 7 - Jan 9, 2019
 - **Grace** :octocat:
-
+	- changed dot system for month view and added to life csv to test
+	- fixed prototype
 - **Tammy** 
 	- [ ] take into consideration all the user input for Time in the Driver (EXCEPTIONS!)
 		- make sure length is no more than 5 
