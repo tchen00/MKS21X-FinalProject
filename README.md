@@ -72,3 +72,5 @@
 - **Grace** :octocat:
 
 - **Tammy** 
+	- [ ] take into consideration all the user input for Time in the Driver (EXCEPTIONS!)
+	- [ ] take into consideration AM and PM (or we could do military time)
