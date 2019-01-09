@@ -1,12 +1,18 @@
-import java.io.BufferedReader;
+import java.io.*;
+
+/*import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+*/
 public class Driver {
 //tested code from online
   public static void main(String[] args) throws IOException {
-       Event a = new Event();
        BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
+       BufferedReader br = new BufferedReader(new FileReader("sampleCalendar.csv"));
+       String csvFile = "sampleCalendar.csv";
+       String line = "";
+       String cvsSplitBy = ",";
+       Event a = new Event();
        System.out.println("Input event name: ");
        String myName = myReader.readLine();
        a.setName(myName);
