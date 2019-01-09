@@ -60,3 +60,4 @@
 	- added more useful methods to Date class, such as isLeapYear and daysInMonth
 	- wrote printMonth without event dots in CalendarViews
 	- condensed numberOfDays with new methods
+	- added system of dots to printMonth using demo csv file
