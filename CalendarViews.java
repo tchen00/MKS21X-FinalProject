@@ -5,7 +5,7 @@ public class CalendarViews extends Date {
   private String view;
   private int month;
   private int startDate;
-  private int endDate;
+  private int endDate; // might not be useful --> calculated by user
   private ArrayList<Event> events;
 
   public CalendarViews(String v, String file) throws FileNotFoundException, IOException{
@@ -71,10 +71,18 @@ public class CalendarViews extends Date {
     for (int i = 1; i <= daysInMonth(m,y); i++) {
       result += i+" ";
       String currentDate = m+"/"+i+"/"+y;
+      int count = 0;
       for (Event e : events) {
         if (currentDate.equals(e.getDate())) {
-          result += "*";
+          count += 1;
           // later, have to figure out tabbing and stuff if not too many stars
+        }
+      }
+      if (count > 4) {
+        result += "****+";
+      } else {
+        for (int x = 0; x < count; x++) {
+          result += "*";
         }
       }
       //System.out.println(convertToNum(getWeekday(i,m,y)));
@@ -83,7 +91,7 @@ public class CalendarViews extends Date {
         result += "\n\n";
       }
     }
-    return result;
+    return result+"\n";
   }
 
   public String printWeek() {
