@@ -5,7 +5,7 @@ public class OurCalendar {
     private File data;
 
     public OurCalendar(String fileName) {
-
+      data = new File(fileName);
     }
 
     public void clearAll() {
@@ -24,8 +24,7 @@ public class OurCalendar {
       // type determines alphabetical vs chronological
       // for now, we're just printing out the events as seen in the csv file
       System.out.println("\nYOUR EVENTS: \n");
-      File f = new File(fileName);
-      BufferedReader br = new BufferedReader(new FileReader(f));
+      BufferedReader br = new BufferedReader(new FileReader(data));
       String line = "";
       while ((line = br.readLine()) != null) {
         System.out.println(line);
