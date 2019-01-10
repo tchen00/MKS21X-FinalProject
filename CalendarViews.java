@@ -57,7 +57,11 @@ public class CalendarViews extends Date {
   }
 
   public String printYear(int y) {
-    return "";
+    String result = "";
+    for (int i = 1; i < 13; i++) {
+      result += printMonth(i,y);
+    }
+    return result;
   }
 
   public String printMonth(int m, int y) {
@@ -125,7 +129,7 @@ public class CalendarViews extends Date {
     return ((days % 7) + 2) % 7;
   }
 
-  // return sweekday the year starts on
+  // returns weekday the year starts on
   public int getFirstDayOfYear(int year) {
     int days = numberOfDays(1,1,year);
     return ((days % 7) + 2) % 7;
@@ -194,7 +198,8 @@ public class CalendarViews extends Date {
     System.out.println(test.getStartOfWeek(2,1,2019));
     System.out.println(test.getStartOfWeek(3,1,2019));
     System.out.println(test.getStartOfWeek(4,1,2019)); */
-    System.out.println(test.printMonth(1,2019));
+    //System.out.println(test.printMonth(1,2019));
+    System.out.println(test.printYear(2019));
 /*    System.out.println(test.printMonth(2,2019));
     System.out.println(test.printMonth(2,2020));
     System.out.println(test.printMonth(4,2019));*/
