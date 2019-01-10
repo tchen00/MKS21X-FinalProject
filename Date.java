@@ -50,4 +50,18 @@ public class Date {
     return -1;
   }
 
-}
+
+  public boolean validDate(int year, int month, int day){
+    if (year < 2019 || month > 12 || month < 1) {
+      return false;
+    }
+    if (day > 31 || (month == 2 && day > 29) ||
+        (((month < 7 && month % 2 == 0) || (month > 8 && month % 2 == 1)) && day > 30)) {
+      return false;
+    }
+    if (!(isLeapYear(year)) && (month == 2 && day == 29)){
+      return false;
+    } return true;
+  }
+
+  }

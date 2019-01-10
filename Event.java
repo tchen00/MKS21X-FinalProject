@@ -64,4 +64,5 @@ public class Event extends Date{
   public void addNote(String n){
     note = n;
   }
+
 }
