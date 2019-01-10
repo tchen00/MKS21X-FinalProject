@@ -33,9 +33,14 @@ public class OurCalendar {
     }
 
     public static void main(String[] args) {
-      try {
+    /*  try {
         OurCalendar c = new OurCalendar("life.csv");
         c.listEvent("life.csv","yes");
+      } catch (Exception e) {
+        System.out.println(e);
+      }*/
+      try {
+        PrintWriter pw = new PrintWriter(new File("yayyy.csv"));
       } catch (Exception e) {
         System.out.println(e);
       }
