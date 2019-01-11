@@ -24,6 +24,10 @@ public class CalendarViews extends Date {
     view = s;
   }
 
+  public ArrayList<Event> getEvents() {
+    return events;
+  }
+
   // returns number of days since Jan 1 2019
   public int numberOfDays(int day, int month, int year) {
     if (!validDate(year, month, day)) {

@@ -64,4 +64,18 @@ public class Date {
     } return true;
   }
 
+  public static void insertionSort(int[] data) {
+    for (int i = 1; i < data.length; i++) {
+      int current = data[i];
+      int newPlace = i;
+      for (int x = i - 1; x >= 0; x--) {
+        if (data[x] > current) {
+          data[x+1] = data[x]; // shifting
+          newPlace = x; // where should current be
+        }
+        data[newPlace] = current;
+      }
+    }
+  }
+
   }
