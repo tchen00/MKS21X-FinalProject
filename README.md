@@ -76,7 +76,10 @@
 	- fixed prototype with Grace
 ### DAY 8 - Jan 10, 2019
 - **Grace** :octocat: 
-	- 
+	- wrote printYear to print months in one column
+	- used Tammy's validDate method to add exceptions in CalendarViews
+	- wrote default listing of events (events listed as they are in the csv file)
+	- started using insertionSort to sort events alphabetically
 - **Tammy**
 	- [ ] take into consideration all the user input for Time in the Driver (EXCEPTIONS!)
 		- make sure length is no more than 5 
