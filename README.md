@@ -77,7 +77,8 @@
 ### DAY 8 - Jan 10, 2019
 - **Grace** :octocat: 
 	- 
-- **Tammy**
+- **Tammy** :sob:
+	- added a validDay() method to check if user input in a valid date
 	- [ ] take into consideration all the user input for Time in the Driver (EXCEPTIONS!)
 		- make sure length is no more than 5 
 		- search through string for : '/ split it / check to see if each individual char is a number  
