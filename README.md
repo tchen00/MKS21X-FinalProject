@@ -80,7 +80,8 @@
 	- used Tammy's validDate method to add exceptions in CalendarViews
 	- wrote default listing of events (events listed as they are in the csv file)
 	- started using insertionSort to sort events alphabetically
-- **Tammy**
+- **Tammy** :sob:
+	- added a validDay() method to check if user input in a valid date
 	- [ ] take into consideration all the user input for Time in the Driver (EXCEPTIONS!)
 		- make sure length is no more than 5 
 		- search through string for : '/ split it / check to see if each individual char is a number  
