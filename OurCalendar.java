@@ -41,12 +41,6 @@ public class OurCalendar extends Date {
         result += e.toString() + "\n\n";
       }
       return result;
-/*      BufferedReader br = new BufferedReader(new FileReader(data));
-      String line = "";
-      while ((line = br.readLine()) != null) {
-        System.out.println(line);
-      }
-      System.out.println("\n"); */
     }
 
     public static void main(String[] args) {
