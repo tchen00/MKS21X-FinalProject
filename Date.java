@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Date {
 
   public String convertToMonth(int n) {
@@ -62,6 +64,64 @@ public class Date {
     if (!(isLeapYear(year)) && (month == 2 && day == 29)){
       return false;
     } return true;
+  }
+
+  // sorts events alphabetically
+  public static void insertionSortA(ArrayList<Event> data) {
+    for (int i = 1; i < data.size(); i++) {
+      Event current = data.get(i);
+      int newPlace = i;
+      for (int x = i - 1; x >= 0; x--) {
+        if (data.get(x).getName().toLowerCase().compareTo(current.getName().toLowerCase()) > 0) {
+          data.set(x+1,data.get(x)); // shifting
+          newPlace = x; // where should current be
+        }
+        data.set(newPlace, current);
+      }
+    }
+  }
+
+  // sorts events chronologically
+  public static void insertionSortC(ArrayList<Event> data) {
+    for (int i = 1; i < data.size(); i++) {
+      Event current = data.get(i);
+      String date = current.getDate();
+      int currentMonth = Integer.parseInt(date.substring(0,date.indexOf("/")));
+      date = date.substring(date.indexOf("/")+1);
+      int currentDay = Integer.parseInt(date.substring(0,date.indexOf("/")));
+      date = date.substring(date.indexOf("/")+1);
+      int currentYear = Integer.parseInt(date);
+      int newPlace = i;
+      for (int x = i - 1; x >= 0; x--) {
+        Event checking = data.get(x);
+        String checkingDate = checking.getDate();
+        int checkingMonth = Integer.parseInt(checkingDate.substring(0,checkingDate.indexOf("/")));
+        checkingDate = checkingDate.substring(checkingDate.indexOf("/")+1);
+        int checkingDay = Integer.parseInt(checkingDate.substring(0,checkingDate.indexOf("/")));
+        checkingDate = checkingDate.substring(checkingDate.indexOf("/")+1);
+        int checkingYear = Integer.parseInt(checkingDate);
+        if (checkingYear > currentYear) {
+          data.set(x+1,data.get(x));
+          newPlace = x;
+        } else if (checkingYear == currentYear) {
+          if (checkingMonth > currentMonth) {
+            data.set(x+1,data.get(x));
+            newPlace = x;
+          } else if (checkingMonth == currentMonth) {
+            if (checkingDay > currentDay) {
+              data.set(x+1,data.get(x));
+              newPlace = x;
+            } else if (checkingDay == currentDay) {
+              if (current.getStartTime().compareTo(checking.getStartTime()) < 0) {
+                data.set(x+1,data.get(x));
+                newPlace = x;
+              }
+            }
+          }
+        }
+        data.set(newPlace, current);
+      }
+    }
   }
 
   }

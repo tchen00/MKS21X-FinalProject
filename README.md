@@ -76,9 +76,20 @@
 	- fixed prototype with Grace
 ### DAY 8 - Jan 10, 2019
 - **Grace** :octocat: 
-	- 
-- **Tammy**
+	- wrote printYear to print months in one column
+	- used Tammy's validDate method to add exceptions in CalendarViews
+	- wrote default listing of events (events listed as they are in the csv file)
+	- started using insertionSort to sort events alphabetically
+- **Tammy** :sob:
+	- added a validDay() method to check if user input in a valid date
 	- [ ] take into consideration all the user input for Time in the Driver (EXCEPTIONS!)
 		- make sure length is no more than 5 
 		- search through string for : '/ split it / check to see if each individual char is a number  
 	- [ ] take into consideration AM and PM (or we could do military time)
+### DAY 9 - Jan 11, 2019
+- **Grace** :octocat:
+	- completed insertionSortA for alphabatizing events, used in listEvent in OurCalendar
+	- completed insertionSortC for sorting events chronologically, used in listEvent in OurCalendar
+	- attempted to recover from traumatizing exams :broken_heart:
+- **Tammy** :sob:
+	- Tammy got tired today but will work on this a lot tomorrow @ StuyHacks! 
