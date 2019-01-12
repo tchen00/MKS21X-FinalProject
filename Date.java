@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Date {
 
   public String convertToMonth(int n) {
@@ -64,18 +66,21 @@ public class Date {
     } return true;
   }
 
-  public static void insertionSort(int[] data) {
-    for (int i = 1; i < data.length; i++) {
-      int current = data[i];
+  // sorts events alphabetically
+  public static void insertionSortA(ArrayList<Event> data) {
+    for (int i = 1; i < data.size(); i++) {
+      Event current = data.get(i);
       int newPlace = i;
       for (int x = i - 1; x >= 0; x--) {
-        if (data[x] > current) {
-          data[x+1] = data[x]; // shifting
+        if (data.get(x).getName().toLowerCase().compareTo(current.getName().toLowerCase()) > 0) {
+          data.set(x+1,data.get(x)); // shifting
           newPlace = x; // where should current be
         }
-        data[newPlace] = current;
+        data.set(newPlace, current);
       }
     }
   }
+
+  
 
   }

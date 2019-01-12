@@ -28,10 +28,14 @@ public class OurCalendar extends Date {
       // type determines alphabetical vs chronological
       // for now, we're just printing out the events as seen in the csv file
       String result = "\nYOUR EVENTS: \n\n";
-      CalendarViews c = new CalendarViews("list",fileName);
-      ArrayList<Event> sorted = c.getEvents();
+      CalendarViews c = new CalendarViews("list","life.csv");
+      ArrayList<Event> sorted = new ArrayList<Event>();
+      sorted = c.getEvents();
+      if (type == 'a') {
+        Date.insertionSortA(sorted);
+      }
       if (type == 'c') {
-        sorted = Date.insertionSort(c.getEvents());
+        Date.insertionSortC(sorted);
       }
       for (Event e : sorted) {
         result += e.toString() + "\n\n";
@@ -48,7 +52,7 @@ public class OurCalendar extends Date {
     public static void main(String[] args) {
       try {
         OurCalendar c = new OurCalendar("life.csv");
-        System.out.println(c.listEvent("life.csv","yes"));
+        System.out.println(c.listEvent("life.csv",'c'));
       } catch (Exception e) {
         System.out.println(e);
       }
