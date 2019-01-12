@@ -86,3 +86,9 @@
 		- make sure length is no more than 5 
 		- search through string for : '/ split it / check to see if each individual char is a number  
 	- [ ] take into consideration AM and PM (or we could do military time)
+### DAY 8 - Jan 11, 2019
+- **Grace** :octocat: 
+	- 
+- **Tammy** :sob:
+	- Tammy got tired today but will work on this a lot tomorrow @ StuyHacks! 
+
