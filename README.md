@@ -86,3 +86,8 @@
 		- make sure length is no more than 5 
 		- search through string for : '/ split it / check to see if each individual char is a number  
 	- [ ] take into consideration AM and PM (or we could do military time)
+### DAY 9 - Jan 11, 2019
+- **Grace** :octocat:
+	- completed insertionSortA for alphabatizing events, used in listEvent in OurCalendar
+	- completed insertionSortC for sorting events chronologically, used in listEvent in OurCalendar
+	- attempted to recover from traumatizing exams :broken_heart:
