@@ -91,3 +91,5 @@
 	- completed insertionSortA for alphabatizing events, used in listEvent in OurCalendar
 	- completed insertionSortC for sorting events chronologically, used in listEvent in OurCalendar
 	- attempted to recover from traumatizing exams :broken_heart:
+- **Tammy** :sob:
+	- Tammy got tired today but will work on this a lot tomorrow @ StuyHacks! 
