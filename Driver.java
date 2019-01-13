@@ -105,20 +105,23 @@ public class Driver {
            System.out.println("Please input the year you would like to see: ");
            String yeary = myReader.readLine();
            int yearr = Integer.parseInt(yeary);
+           System.out.println("Please input the month you would like to see: ");
            String monthy = myReader.readLine();
-           int monthh = Integer.parseInt(yeary);
+           int monthh = Integer.parseInt(monthy);
            CalendarViews test = new CalendarViews("month","life.csv");
            System.out.println(test.printMonth(yearr, monthh));
          } else if (myView.equals("week")){
            System.out.println("Please input the year you would like to see: ");
            String yeary = myReader.readLine();
            int yearr = Integer.parseInt(yeary);
+           System.out.println("Please input the month you would like to see: ");
            String monthy = myReader.readLine();
-           int monthh = Integer.parseInt(yeary);
+           int monthh = Integer.parseInt(monthy);
+           System.out.println("Please input a day in the week: ");
            String dayye = myReader.readLine();
            int dayy = Integer.parseInt(dayye);
            CalendarViews test = new CalendarViews("week","life.csv");
-           System.out.println(test.printWeek(yearr, monthh, dayy));
+           test.printWeek(yearr, monthh, dayy);
          }
          // test.printWeek(7,1,2019);
     //     System.out.print("\033[H\033[2J");
