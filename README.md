@@ -95,7 +95,7 @@
 	- Tammy got tired today but will work on this a lot tomorrow @ StuyHacks!
 ### DAY 9 - Jan 11, 2019 STUYHACKS
 - **Grace** :octocat:
-	-
+	- StuyHacks was a fun experience that barred Grace from working on her project :no-mouth: 
 - **Tammy** :sob:
 	- Finished instructions in Driver
 	- 
