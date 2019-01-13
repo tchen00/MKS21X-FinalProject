@@ -91,11 +91,11 @@ public class Driver {
              inpu = Integer.parseInt(input);
            }
            if (inpu == 1) {
-             System.out.println(calendar.listEvent('a'));
+             System.out.println(calendar.listEvent("life.csv",'a'));
            } else if (inpu == 2) {
-             System.out.println(calendar.listEvent('c'));
+             System.out.println(calendar.listEvent("life.csv",'c'));
            } else if (inpu == 3) {
-             System.out.println(calendar.listEvent('z'));
+             System.out.println(calendar.listEvent("life.csv",'z'));
            }
         } else if (inpu == 4){
            System.out.println("Please wait patiently for this future. Patience is bliss!");

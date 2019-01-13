@@ -93,9 +93,15 @@
 	- attempted to recover from traumatizing exams :broken_heart:
 - **Tammy** :sob:
 	- Tammy got tired today but will work on this a lot tomorrow @ StuyHacks!
-### DAY 9 - Jan 11, 2019 STUYHACKS
+### DAY 10 - Jan 12, 2019 STUYHACKS
 - **Grace** :octocat:
-	- StuyHacks was a fun experience that barred Grace from working on her project :no-mouth: 
+	- StuyHacks was a fun experience that barred Grace from working on her project :no-mouth:
 - **Tammy** :sob:
 	- Finished instructions in Driver
-	- 
+### DAY 11 - Jan 13, 2019
+- **Grace** :octocat:
+	-
+- **Tammy** :sob:
+	- did a lot of debugging of the Driver
+	- combined all the classes and put them to use under one main
+	- made the life.csv presentable for demoes 
