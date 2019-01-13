@@ -62,20 +62,20 @@
 	- condensed numberOfDays with new methods
 	- added system of dots to printMonth using demo csv file
 - **Tammy** :relieved:
-	- put in a couple of new methods for Event class 
-	- fix Driver so now it can print out all the information of the event given user input 
+	- put in a couple of new methods for Event class
+	- fix Driver so now it can print out all the information of the event given user input
 	- put in csv handler in Driver so Events can now be added into a CSV file
-		- for now, events are stored in life.csv 
+		- for now, events are stored in life.csv
 	- made changes to prototype AGAIN! :no_mouth:
-	
+
 ### DAY 7 - Jan 9, 2019
 - **Grace** :octocat:
 	- changed dot system for month view and added to life csv to test
 	- fixed prototype
-- **Tammy** 
+- **Tammy**
 	- fixed prototype with Grace
 ### DAY 8 - Jan 10, 2019
-- **Grace** :octocat: 
+- **Grace** :octocat:
 	- wrote printYear to print months in one column
 	- used Tammy's validDate method to add exceptions in CalendarViews
 	- wrote default listing of events (events listed as they are in the csv file)
@@ -83,7 +83,7 @@
 - **Tammy** :sob:
 	- added a validDay() method to check if user input in a valid date
 	- [ ] take into consideration all the user input for Time in the Driver (EXCEPTIONS!)
-		- make sure length is no more than 5 
+		- make sure length is no more than 5
 		- search through string for : '/ split it / check to see if each individual char is a number  
 	- [ ] take into consideration AM and PM (or we could do military time)
 ### DAY 9 - Jan 11, 2019
@@ -92,4 +92,10 @@
 	- completed insertionSortC for sorting events chronologically, used in listEvent in OurCalendar
 	- attempted to recover from traumatizing exams :broken_heart:
 - **Tammy** :sob:
-	- Tammy got tired today but will work on this a lot tomorrow @ StuyHacks! 
+	- Tammy got tired today but will work on this a lot tomorrow @ StuyHacks!
+### DAY 9 - Jan 11, 2019 STUYHACKS
+- **Grace** :octocat:
+	-
+- **Tammy** :sob:
+	- Finished instructions in Driver
+	- 
