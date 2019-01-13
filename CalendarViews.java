@@ -2,11 +2,8 @@ import java.io.*;
 import java.util.*;
 
 public class CalendarViews extends Date {
-  private String view;
-  private int month;
-  private int startDate;
-  private int endDate; // might not be useful --> calculated by user
-  private ArrayList<Event> events;
+  private String view; // yearly, monthly, weekly, daily
+  private ArrayList<Event> events; // all events in csv file
 
   public CalendarViews(String v, String file) throws FileNotFoundException, IOException{
     events = new ArrayList<Event>();
@@ -19,21 +16,25 @@ public class CalendarViews extends Date {
     return view;
   }
 
+  /// Useful?
   // changes the view
   public void setView(String s) {
     view = s;
   }
 
+  // used in OurCalendar
   public ArrayList<Event> getEvents() {
     return events;
   }
 
   // returns number of days since Jan 1 2019
   public int numberOfDays(int day, int month, int year) {
+    // exceptions handled
     if (!validDate(year, month, day)) {
       throw new IllegalArgumentException("Your date inputed is either not real or befoe Jan 1 2019");
     }
     int result = 0;
+    // adding days from years
     for (int i = year - 1; i >= 2019; i--) {
       if (i % 4 == 0 && !(i % 100 == 0 && i % 400 != 0)) {
         result += 366;
@@ -51,6 +52,7 @@ public class CalendarViews extends Date {
     return result;
   }
 
+  // prints out all 12 months in one long column
   public String printYear(int y) {
     if (!validDate(y,1,1)) {
       throw new IllegalArgumentException("Your year inputed is before 2019. We do not dwell in the past, please enter another.");
@@ -62,6 +64,7 @@ public class CalendarViews extends Date {
     return result;
   }
 
+  // prints out month with dot system to mark events
   public String printMonth(int m, int y) {
     if (!validDate(y,m,1)) {
       throw new IllegalArgumentException("Your year and month inputed are invalid.");
@@ -84,7 +87,7 @@ public class CalendarViews extends Date {
         }
       }
       if (count > 4) {
-        result += "****+";
+        result += "****+"; // dot system, if too many
       } else {
         for (int x = 0; x < count; x++) {
           result += "*";
@@ -99,8 +102,30 @@ public class CalendarViews extends Date {
     return result+"\n";
   }
 
-  public String printWeek() {
-    return "";
+  // prints out week that the day given is in
+  public void printWeek(int day, int month, int year) {
+    int dayOfWeek = convertToNum(getWeekday(day));
+    int startDate = day - dayOfWeek; // gets the Sunday of that week
+    // figuring out how many rows of table to have
+    int maxEvents = 0;
+    for (int i = startDate; i < startDate + 7; i++) {
+      int numberOfEvents = 0;
+      for (Event e : events) {
+        int currentDate = month + "/" + i + "/" + year;
+        if (e.getDate().equals(currentDate)) {
+          numberOfEvents++;
+        }
+      }
+      if (numberOfEvents > maxEvents) {
+        maxEvents = numberOfEvents;
+      }
+    }
+    String[][] table = new String[maxEvents+1][7];
+    System.out.println(convertToMonth(month).toUpperCase() + year);
+    for (int i = 0; i < 7; i++) {
+      table[0][i] = (startDate+i) + " " + getWeekday(startDate+i, month, year);
+      
+    }
   }
 
   public String printDay() {
@@ -152,6 +177,7 @@ public class CalendarViews extends Date {
   }
 
   // returns number of Sundays in a month
+  // helper method for getStartOfWeek
   private int numberOfWeeks(int month, int year) {
     int sundays = 0;
     for (int i = 0; i < daysInMonth(month, year); i++) {
@@ -184,19 +210,19 @@ public class CalendarViews extends Date {
 
   public static void main (String[] args) throws FileNotFoundException, IOException{
     CalendarViews test = new CalendarViews("month","life.csv");
-    try {
-      System.out.println(test.numberOfDays(28, 2, 2019));
+    //try {
+      //System.out.println(test.numberOfDays(28, 2, 2019));
     //  System.out.println(test.numberOfDays(1, 1, 2018));
   //    System.out.println(test.numberOfDays(1, 13, 2019));
     //  System.out.println(test.numberOfDays(1, 0, 2019));
   //    System.out.println(test.numberOfDays(30, 2, 2020));
-      System.out.println(test.numberOfDays(29, 2, 2020));
+    //  System.out.println(test.numberOfDays(29, 2, 2020));
   //    System.out.println(test.numberOfDays(29, 2, 2019));
   //    System.out.println(test.numberOfDays(31, 9, 2019));
   //    System.out.println(test.numberOfDays(32, 1, 2019));
-    } catch (Exception e) {
-      System.out.println(e);
-    }
+  //  } catch (Exception e) {
+    //  System.out.println(e);
+    //}
 /*    System.out.println(test.numberOfDays(1, 1, 2019));
     System.out.println(test.numberOfDays(1, 2, 2019));
     System.out.println(test.numberOfDays(23, 10, 2019));
@@ -227,7 +253,7 @@ public class CalendarViews extends Date {
     System.out.println(test.getStartOfWeek(4,1,2019));
     System.out.println(test.getStartOfWeek(5,1,2019)); */
     //System.out.println(test.printMonth(1,2019));
-  //  System.out.println(test.printYear(2019));
+    System.out.println(test.printYear(2019));
 /*    System.out.println(test.printMonth(2,2019));
     System.out.println(test.printMonth(2,2020));
     System.out.println(test.printMonth(4,2019));*/
