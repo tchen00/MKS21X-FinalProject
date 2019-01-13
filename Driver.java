@@ -33,6 +33,7 @@ public class Driver {
        int inpu = Integer.parseInt(input);
        if (inpu == 1) {
          Event a = new Event();
+         Date b = new Date();
          System.out.println("Input event name: ");
          String myName = myReader.readLine();
          a.setName(myName);
@@ -51,7 +52,26 @@ public class Driver {
          String myDay = myReader.readLine();
          out.append(myDay);
          out.append(",");
-         a.setDate(Integer.parseInt(myYear),Integer.parseInt(myMonth),Integer.parseInt(myDay));
+         boolean valiDate = false;
+         while (!valiDate){
+           if (b.validDate(Integer.parseInt(myYear),Integer.parseInt(myMonth),Integer.parseInt(myDay))){
+             a.setDate(Integer.parseInt(myYear),Integer.parseInt(myMonth),Integer.parseInt(myDay));
+             valiDate = true;
+           } else {
+             System.out.println("Please make sure you are inputting a valid date: \n NOTE: This calendar will not let you dwell in the past so don't try to set an event from  the past");
+             System.out.print("Input your event year :");
+             myYear = myReader.readLine();
+             out.append(myYear);
+             out.append(",");
+             System.out.print("Input your event month :");
+             myMonth = myReader.readLine();
+             out.append(myMonth);
+             out.append(",");
+             System.out.print("Input your event day :");
+             myDay = myReader.readLine();
+             out.append(myDay);
+             out.append(",");
+           }
          System.out.print("Input your event start time :");
          String myStartTime = myReader.readLine();
          out.append(myStartTime);
@@ -86,4 +106,5 @@ public class Driver {
       */
 
    }
+}
 }

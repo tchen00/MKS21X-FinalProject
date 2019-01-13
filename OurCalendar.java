@@ -46,7 +46,7 @@ public class OurCalendar extends Date {
     public static void main(String[] args) {
       try {
         OurCalendar c = new OurCalendar("life.csv");
-        System.out.println(c.listEvent("life.csv",'c'));
+        System.out.println(c.listEvent("life.csv",'a'));
       } catch (Exception e) {
         System.out.println(e);
       }
