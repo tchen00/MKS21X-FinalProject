@@ -21,6 +21,7 @@ public class Driver {
     System.out.println("" + a.validDate(2019,111,1));
     System.out.println("" + a.validDate(2019,11,32));
     */
+    try {
        BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
        BufferedReader br = new BufferedReader(new FileReader("life.csv"));
        String csvFile = "life.csv";
@@ -28,7 +29,7 @@ public class Driver {
        String cvsSplitBy = ",";
        FileWriter fw = new FileWriter("life.csv", true);
        PrintWriter out = new PrintWriter(fw);
-       System.out.println("Welcome to your Calendar and Scheduling: " + "\n" + "Below is the menu: \n \t 1. Add an Event \n \t 2. Print Calendar View with Events \n \t 3. List All Upcoming Events \n \t 4. Delete Event (IN THE FUTURE) \n \t 5.Exit Program" );
+       System.out.println("Welcome to your Calendar and Scheduling: " + "\n" + "Below is the menu: \n \t 1. Add an Event \n \t 2. Print Calendar View with Events \n \t 3. List All Upcoming Events \n \t 4. Delete Event (IN THE FUTURE) \n \t 5. Exit Program" );
        System.out.println("Please input your option: ");
        String input = myReader.readLine();
        int inpu = Integer.parseInt(input);
@@ -38,9 +39,14 @@ public class Driver {
          inpu = Integer.parseInt(input);
        }
        if (inpu == 2){
+    //     System.out.print("\033[H\033[2J");
+    //     System.out.flush();  
            // INSERT CODE FOR CALENDAR VIEWS
            System.out.println("");
-        } else if (inpu == 3){
+      //     String[] arg = {};
+    //       CalendarViews.main(arg);
+         }
+          else if (inpu == 3){
            System.out.println("");
         } else if (inpu == 4){
            System.out.println("Please wait patiently for this future. Patience is bliss!");
@@ -111,7 +117,9 @@ public class Driver {
          System.out.println(a.toString());
        }
      }
-
+     }catch (Exception e){
+       System.out.println("Please put in valid parameters");
+       System.exit(1);
        }
       // System.out.print("Input your start time :");
       // myName = myReader.readLine();
@@ -119,3 +127,4 @@ public class Driver {
       // String endTime = myRead.readLine();
 
    }
+ }
