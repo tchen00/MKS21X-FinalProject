@@ -16,12 +16,6 @@ public class CalendarViews extends Date {
     return view;
   }
 
-  /// Useful?
-  // changes the view
-  public void setView(String s) {
-    view = s;
-  }
-
   // used in OurCalendar
   public ArrayList<Event> getEvents() {
     return events;
@@ -147,10 +141,6 @@ public class CalendarViews extends Date {
     for (String[] row : table) {
       System.out.format("%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n", row);
     }
-  }
-
-  public String printDay() {
-    return "";
   }
 
   // collects data and fills in events array
