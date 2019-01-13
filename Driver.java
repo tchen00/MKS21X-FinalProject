@@ -40,14 +40,31 @@ public class Driver {
        }
        if (inpu == 2){
     //     System.out.print("\033[H\033[2J");
-    //     System.out.flush();  
+    //     System.out.flush();
            // INSERT CODE FOR CALENDAR VIEWS
            System.out.println("");
       //     String[] arg = {};
     //       CalendarViews.main(arg);
          }
           else if (inpu == 3){
-           System.out.println("");
+           OurCalendar calendar = new OurCalendar(csvFile);
+           System.out.println("How would you like to list your events?");
+           System.out.println("\t1.Alphabetically\n\t2.Chronologically\n\t3.How I inputed it");
+           System.out.println("Please enter your option:");
+           input = myReader.readLine();
+           inpu = Integer.parseInt(input);
+           if (inpu > 3) {
+             System.out.println("Please enter a valid option: ");
+             input = myReader.readLine();
+             inpu = Integer.parseInt(input);
+           }
+           if (inpu == 1) {
+             System.out.println(calendar.listEvent('a'));
+           } else if (inpu == 2) {
+             System.out.println(calendar.listEvent('c'));
+           } else if (inpu == 3) {
+             System.out.println(calendar.listEvent('z'));
+           }
         } else if (inpu == 4){
            System.out.println("Please wait patiently for this future. Patience is bliss!");
          } else if (inpu == 5){
