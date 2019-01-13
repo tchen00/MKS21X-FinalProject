@@ -21,6 +21,7 @@ public class Driver {
     System.out.println("" + a.validDate(2019,111,1));
     System.out.println("" + a.validDate(2019,11,32));
     */
+    try {
        BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
        BufferedReader br = new BufferedReader(new FileReader("life.csv"));
        String csvFile = "life.csv";
@@ -28,11 +29,32 @@ public class Driver {
        String cvsSplitBy = ",";
        FileWriter fw = new FileWriter("life.csv", true);
        PrintWriter out = new PrintWriter(fw);
-       System.out.println("Welcome to your Calendar and Scheduling: " + "\n" + "Below is the menu: \n \t 1. Add Event \n \t 2. Print Calendar \n \t 3. Delete Event" );
+       System.out.println("Welcome to your Calendar and Scheduling: " + "\n" + "Below is the menu: \n \t 1. Add an Event \n \t 2. Print Calendar View with Events \n \t 3. List All Upcoming Events \n \t 4. Delete Event (IN THE FUTURE) \n \t 5. Exit Program" );
        System.out.println("Please input your option: ");
        String input = myReader.readLine();
        int inpu = Integer.parseInt(input);
-       if (inpu == 1) {
+       while (inpu > 5){
+         System.out.println("Please enter a valid option: ");
+         input = myReader.readLine();
+         inpu = Integer.parseInt(input);
+       }
+       if (inpu == 2){
+    //     System.out.print("\033[H\033[2J");
+    //     System.out.flush();  
+           // INSERT CODE FOR CALENDAR VIEWS
+           System.out.println("");
+      //     String[] arg = {};
+    //       CalendarViews.main(arg);
+         }
+          else if (inpu == 3){
+           System.out.println("");
+        } else if (inpu == 4){
+           System.out.println("Please wait patiently for this future. Patience is bliss!");
+         } else if (inpu == 5){
+           System.out.println("Thank you for being organized!");
+           System.exit(1);
+         }
+       else if (inpu == 1) {
          Event a = new Event();
          Date b = new Date();
          System.out.println("Input event name: ");
@@ -72,7 +94,7 @@ public class Driver {
              myDay = myReader.readLine();
              out.append(myDay);
              out.append(",");
-           }
+          }
          System.out.print("Input your event start time :");
          String myStartTime = myReader.readLine();
          out.append(myStartTime);
@@ -94,16 +116,15 @@ public class Driver {
          System.out.println("---------------------------------------------------------------");
          System.out.println(a.toString());
        }
+     }
+     }catch (Exception e){
+       System.out.println("Please put in valid parameters");
+       System.exit(1);
+       }
       // System.out.print("Input your start time :");
       // myName = myReader.readLine();
       // System.out.println("Event start time is : "+ myName);
       // String endTime = myRead.readLine();
 
-/*
-    TO - DO
-      -  
-      */
-
    }
-}
-}
+ }

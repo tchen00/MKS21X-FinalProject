@@ -11,6 +11,9 @@ public class CalendarViews extends Date {
     getData(file);
   }
 
+  public CalendarViews(){
+
+  }
   // returns the view selected
   public String getView() {
     return view;
