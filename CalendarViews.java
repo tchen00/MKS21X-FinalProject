@@ -104,14 +104,14 @@ public class CalendarViews extends Date {
 
   // prints out week that the day given is in
   public void printWeek(int day, int month, int year) {
-    int dayOfWeek = convertToNum(getWeekday(day));
+    int dayOfWeek = convertToNum(getWeekday(day, month, year));
     int startDate = day - dayOfWeek; // gets the Sunday of that week
     // figuring out how many rows of table to have
     int maxEvents = 0;
     for (int i = startDate; i < startDate + 7; i++) {
       int numberOfEvents = 0;
       for (Event e : events) {
-        int currentDate = month + "/" + i + "/" + year;
+        String currentDate = month + "/" + i + "/" + year;
         if (e.getDate().equals(currentDate)) {
           numberOfEvents++;
         }
@@ -121,10 +121,31 @@ public class CalendarViews extends Date {
       }
     }
     String[][] table = new String[maxEvents+1][7];
-    System.out.println(convertToMonth(month).toUpperCase() + year);
+    System.out.println(convertToMonth(month).toUpperCase() +" "+ year);
     for (int i = 0; i < 7; i++) {
       table[0][i] = (startDate+i) + " " + getWeekday(startDate+i, month, year);
-      
+      ArrayList<String> tempList = new ArrayList<String>();
+      for (Event e : events) {
+        String currentDate = month + "/" + (i+startDate) + "/" + year;
+      //  System.out.println(currentDate);
+        if (e.getDate().equals(currentDate)) {
+          String name = e.getName();
+          if (e.getName().length() > 18) {
+            name = e.getName().substring(0,18);
+          }
+          tempList.add(name);
+        }
+      }
+      for (int x = 1; x < table.length; x++) {
+        if (x-1 < tempList.size()) {
+          table[x][i] = tempList.get(x-1);
+        } else {
+          table[x][i] = "-"; // no events left on this day
+        }
+      }
+    }
+    for (String[] row : table) {
+      System.out.format("%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n", row);
     }
   }
 
@@ -253,7 +274,7 @@ public class CalendarViews extends Date {
     System.out.println(test.getStartOfWeek(4,1,2019));
     System.out.println(test.getStartOfWeek(5,1,2019)); */
     //System.out.println(test.printMonth(1,2019));
-    System.out.println(test.printYear(2019));
+  //  System.out.println(test.printYear(2019));
 /*    System.out.println(test.printMonth(2,2019));
     System.out.println(test.printMonth(2,2020));
     System.out.println(test.printMonth(4,2019));*/
@@ -263,6 +284,7 @@ public class CalendarViews extends Date {
     } catch (Exception e) {
       System.out.println(e);
     } */
+    test.printWeek(7,1,2019);
   }
 
 }
