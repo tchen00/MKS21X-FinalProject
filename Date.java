@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Date {
 
+  // convert from int to String month
   public String convertToMonth(int n) {
     if (n == 1) return "January";
     if (n == 2) return "February";
@@ -18,10 +19,13 @@ public class Date {
     return null;
   }
 
+  // checks if a year is a leap year
   public boolean isLeapYear(int year) {
     return year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0);
   }
 
+  // total of days in a month
+  // easier to check for exceptions and get numberOfDays
   public int daysInMonth(int m, int y) {
     boolean leapYear = isLeapYear(y);
     if (leapYear && m == 2) return 29;
@@ -30,6 +34,7 @@ public class Date {
     return 30;
   }
 
+  // from int to String weekday
   public String convertToDay(int n) {
     if (n == 0) return "Sunday";
     if (n == 1) return "Monday";
@@ -41,6 +46,7 @@ public class Date {
     return null;
   }
 
+  // from weekday to int
   public int convertToNum(String d) {
     if (d.equals("Sunday")) return 0;
     if (d.equals("Monday")) return 1;
@@ -52,7 +58,8 @@ public class Date {
     return -1;
   }
 
-
+  // used to check for invalid date entered
+  // note: years before 2019 are not valid
   public boolean validDate(int year, int month, int day){
     if (year < 2019 || month > 12 || month < 1) {
       return false;

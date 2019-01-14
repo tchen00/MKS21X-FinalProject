@@ -3,12 +3,13 @@ import java.util.*;
 
 public class OurCalendar extends Date {
     private int year;
-    private File data;
+    private String file;
 
     public OurCalendar(String fileName) {
-      data = new File(fileName);
+      file = fileName;
     }
 
+    // Note TO BE COMPLETED LATER
     public void clearAll() {
 
     }
@@ -24,11 +25,11 @@ public class OurCalendar extends Date {
     // "a" = alphabetical
     // "c" = chronological
     // "n" = order listed in csv file
-    public String listEvent(String fileName, char type) throws FileNotFoundException, IOException{
+    public String listEvent(char type) throws FileNotFoundException, IOException{
       // type determines alphabetical vs chronological
       // for now, we're just printing out the events as seen in the csv file
       String result = "\nYOUR EVENTS: \n\n";
-      CalendarViews c = new CalendarViews("list","life.csv");
+      CalendarViews c = new CalendarViews("list",file);
       ArrayList<Event> sorted = new ArrayList<Event>();
       sorted = c.getEvents();
       if (type == 'a') {
@@ -41,20 +42,5 @@ public class OurCalendar extends Date {
         result += e.toString() + "\n\n";
       }
       return result;
-    }
-
-    public static void main(String[] args) {
-      try {
-        OurCalendar c = new OurCalendar("life.csv");
-        System.out.println(c.listEvent("life.csv",'a'));
-      } catch (Exception e) {
-        System.out.println(e);
-      }
-    /*  try {
-        PrintWriter pw = new PrintWriter(new File("yayyy.csv"));
-      } catch (Exception e) {
-        System.out.println(e);
-      } */
-
     }
 }

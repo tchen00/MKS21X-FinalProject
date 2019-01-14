@@ -52,6 +52,9 @@ public class Event extends Date{
   }
 
   public void setDate(int y, int m, int d){
+    if (!validDate(y,m,d)) {
+      throw new IllegalArgumentException("Your date inputed is invalid.");
+    }
     year = y;
     month = m;
     day = d;
