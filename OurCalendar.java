@@ -10,8 +10,11 @@ public class OurCalendar extends Date {
     }
 
     // Note TO BE COMPLETED LATER
-    public void clearAll() {
-
+    public void clearAll() throws IOException {
+      File f = new File(file);
+      FileWriter fw = new FileWriter(f,false);
+      fw.write("");
+      fw.close();
     }
 
     public void createEvent() {
@@ -42,5 +45,10 @@ public class OurCalendar extends Date {
         result += e.toString() + "\n\n";
       }
       return result;
+    }
+
+    public static void main(String[] args) throws IOException {
+      OurCalendar c = new OurCalendar("yayyy.csv");
+      c.clearAll();
     }
 }
