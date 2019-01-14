@@ -114,6 +114,10 @@ However, in the future, the program will clear the entire csv for a new user.
 	- did a lot of debugging of the Driver
 	- combined all the classes and put them to use under one main
 	- made the life.csv presentable for demos 
+### DAY 12 - Jan 14, 2019
+- **Grace** :octocat:
+	- wrote clearAll method in OurCalendar
+
 
 FUTURE TO-DO LIST:
 	- clear csv file if user asks
