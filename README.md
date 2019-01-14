@@ -1,5 +1,10 @@
 # MKS21X-FinalProject
 
+## :date: INSTRUCTIONS
+Our project is an interactive calendar and planner. javac and java OurCalendar and a menu will pop up with options.
+Typing in the number of the option will work all the time with the exception of the view of the calendar. There, type in year, month, or week.
+A csv file comes with the calendar, life.csv. Inside, there are already events listed for the purposes of the demo.
+However, in the future, the program will clear the entire csv for a new user. 
 
 
 ## :memo: Development Logs  
@@ -100,8 +105,18 @@
 	- Finished instructions in Driver
 ### DAY 11 - Jan 13, 2019
 - **Grace** :octocat:
-	-
+	- made final edits to all the classes and such
+	- dealt with merge issues
+	- entered in documentation
+	- deleted any methods that were not useful
+	- practiced for demo
 - **Tammy** :sob:
 	- did a lot of debugging of the Driver
 	- combined all the classes and put them to use under one main
-	- made the life.csv presentable for demoes 
+	- made the life.csv presentable for demos 
+
+FUTURE TO-DO LIST:
+	- clear csv file if user asks
+	- delete events
+	- move Driver stuff to OurCalendar
+	- work on consistency and more user-friendly stuff
