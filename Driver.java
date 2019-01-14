@@ -34,6 +34,7 @@ public class Driver {
          if (myView.equals("year")){
            System.out.println("Please input the year you would like to see: ");
            String yeary = myReader.readLine();
+           System.out.println(yeary);
            int yearr = Integer.parseInt(yeary);
            CalendarViews test = new CalendarViews("year",csvFile);
            System.out.println(test.printYear(yearr));
@@ -57,7 +58,10 @@ public class Driver {
            String dayye = myReader.readLine();
            int dayy = Integer.parseInt(dayye);
            CalendarViews test = new CalendarViews("week",csvFile);
-           test.printWeek(yearr, monthh, dayy);
+           test.printWeek(dayy, monthh, yearr);
+         } else {
+           System.out.println("Please put in a valid option");
+           System.exit(1);
          }
        }
        // LISTING THE EVENTS
@@ -132,30 +136,30 @@ public class Driver {
              out.append(myDay);
              out.append(",");
           }
-         System.out.print("Input your event start time :");
-         String myStartTime = myReader.readLine();
-         out.append(myStartTime);
-         out.append(",");
-         System.out.print("Input your event end time :");
-         String myEndTime = myReader.readLine();
-         out.append(myEndTime);
-         out.append(",");
-         a.setTime(myStartTime, myEndTime);
-         System.out.print("Input any additional notes you may have:");
-         String myNote = myReader.readLine();
-         out.append(myNote);
-         out.append("\n");
-         out.flush();
-         out.close();
-         fw.close();
-         br.close();
-         a.addNote(myNote);
-         System.out.println("---------------------------------------------------------------");
-         System.out.println(a.toString());
+        }
+        System.out.print("Input your event start time :");
+        String myStartTime = myReader.readLine();
+        out.append(myStartTime);
+        out.append(",");
+        System.out.print("Input your event end time :");
+        String myEndTime = myReader.readLine();
+        out.append(myEndTime);
+        out.append(",");
+        a.setTime(myStartTime, myEndTime);
+        System.out.print("Input any additional notes you may have:");
+        String myNote = myReader.readLine();
+        out.append(myNote);
+        out.append("\n");
+        out.flush();
+        out.close();
+        fw.close();
+        br.close();
+        a.addNote(myNote);
+        System.out.println("---------------------------------------------------------------");
+        System.out.println(a.toString());
        }
-     }
      } catch (Exception e){
-       //System.out.println(e);
+      // System.out.println(e);
        System.out.println("Please put in valid parameters");
        System.exit(1);
        }
