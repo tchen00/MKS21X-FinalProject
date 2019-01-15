@@ -123,7 +123,7 @@ However, in the future, the program will clear the entire csv for a new user.
 	- attempted to delete events (need to research more about this)
 	- add proper time in the Driver
 		- had issues with atom at home so might resort to gedit for now
-### DAY 12 - Jan 14, 2019
+### DAY 12 - Jan 14, 2019 (DISCOVERY DAY) 
 - **Grace** :octocat:
 	-
 - **Tammy** :sob:
