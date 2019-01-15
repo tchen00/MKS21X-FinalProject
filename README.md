@@ -122,7 +122,14 @@ However, in the future, the program will clear the entire csv for a new user.
 - **Tammy** :sob:
 	- attempted to delete events (need to research more about this)
 	- add proper time in the Driver
-		- had issues with atom at home so might resort to gedit for now 
+		- had issues with atom at home so might resort to gedit for now
+### DAY 12 - Jan 14, 2019
+- **Grace** :octocat:
+	-
+- **Tammy** :sob:
+	- made selection of calendar views more user friendly
+	- made edits to OurCalendar
+	- learned how to make different colors in the terminal with System.out.println(...)
 
 FUTURE TO-DO LIST:
 	- delete events
