@@ -117,13 +117,14 @@ However, in the future, the program will clear the entire csv for a new user.
 ### DAY 12 - Jan 14, 2019
 - **Grace** :octocat:
 	- wrote clearAll method in OurCalendar
+	- added clearAll option to menu when user first enters
+	- fixed prototype (specifically the UML) :fire:
 - **Tammy** :sob:
 	- attempted to delete events (need to research more about this)
 	- add proper time in the Driver
 		- had issues with atom at home so might resort to gedit for now 
 
 FUTURE TO-DO LIST:
-	- clear csv file if user asks
 	- delete events
 	- move Driver stuff to OurCalendar
 	- work on consistency and more user-friendly stuff
