@@ -17,8 +17,24 @@ public class Driver {
        FileWriter fw = new FileWriter(csvFile, true);
        PrintWriter out = new PrintWriter(fw);
        System.out.println("Welcome to your Calendar and Scheduling: " + "\n" + "Below is the menu: \n \t 1. Add an Event \n \t 2. Print Calendar View with Events \n \t 3. List All Upcoming Events \n \t 4. Delete Event (IN THE FUTURE) \n \t 5. Exit Program" );
-       System.out.println("Please input your option: ");
+       System.out.println("\nIf you are a new user who would like to start afresh and delete all old data, please input clear down below");
+       System.out.println("\nPlease input your option: ");
        String input = myReader.readLine();
+       if (input.equals("clear")) {
+         System.out.println("Be aware that this deletes all old data such as events stored in the calendar forever.");
+         System.out.println("Would you still like to clear? (y/n)");
+         String answer = myReader.readLine();
+         while (!answer.equals("y") && !answer.equals("n")) {
+           System.out.println("Would you still like to clear? (y/n)");
+           answer = myReader.readLine();
+         }
+         if (answer.equals("y")) {
+           OurCalendar clearing = new OurCalendar(csvFile);
+           clearing.clearAll();
+           System.out.println("Cleared!");
+         }
+         System.exit(1);
+       }
        int inpu = Integer.parseInt(input);
        // NOT AN OPTION
        while (inpu > 5){
@@ -159,7 +175,7 @@ public class Driver {
         System.out.println(a.toString());
        }
      } catch (Exception e){
-      // System.out.println(e);
+       System.out.println(e);
        System.out.println("Please put in valid parameters");
        System.exit(1);
        }
