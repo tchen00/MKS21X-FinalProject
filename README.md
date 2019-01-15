@@ -4,7 +4,7 @@
 Our project is an interactive calendar and planner. javac and java OurCalendar and a menu will pop up with options.
 Typing in the number of the option will work all the time with the exception of the view of the calendar. There, type in year, month, or week.
 A csv file comes with the calendar, life.csv. Inside, there are already events listed for the purposes of the demo.
-However, in the future, the program will clear the entire csv for a new user. 
+However, in the future, the program will clear the entire csv for a new user.
 
 
 ## :memo: Development Logs  
@@ -113,11 +113,14 @@ However, in the future, the program will clear the entire csv for a new user.
 - **Tammy** :sob:
 	- did a lot of debugging of the Driver
 	- combined all the classes and put them to use under one main
-	- made the life.csv presentable for demos 
+	- made the life.csv presentable for demos
 ### DAY 12 - Jan 14, 2019
 - **Grace** :octocat:
 	- wrote clearAll method in OurCalendar
-
+- **Tammy** :sob:
+	- attempted to delete events (need to research more about this)
+	- add proper time in the Driver
+		- had issues with atom at home so might resort to gedit for now 
 
 FUTURE TO-DO LIST:
 	- clear csv file if user asks
