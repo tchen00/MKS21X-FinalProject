@@ -7,8 +7,24 @@ import java.io.InputStreamReader;
 */
 public class Driver {
 //tested code from online
+/* TESTING COLORS -- UNCOMMENT TO TEST
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
+*/
   public static void main(String[] args) throws IOException {
     try {
+    /* UNCOMMENT THIS TO TEST COLORS
+       System.out.println(ANSI_RED + "This text is red!" + ANSI_RESET);
+       System.out.println(ANSI_GREEN + "Hi" + ANSI_RESET);
+       System.out.println(ANSI_CYAN + "PERSON!! YOU ARE AMAZING!" + ANSI_RESET);
+    */
        BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
        BufferedReader br = new BufferedReader(new FileReader("life.csv"));
        String csvFile = "life.csv";
@@ -38,6 +54,7 @@ public class Driver {
        int inpu = Integer.parseInt(input);
        // NOT AN OPTION
        while (inpu > 5){
+         System.out.println("-----------------------------------------------------------------------------------------");
          System.out.println("Please enter a valid option: ");
          input = myReader.readLine();
          inpu = Integer.parseInt(input);
@@ -45,6 +62,7 @@ public class Driver {
        // VIEWING THE CALENDAR
        if (inpu == 2) {
         // CalendarViews test = new CalendarViews();
+         System.out.println("-----------------------------------------------------------------------------------------");
          System.out.println("Please select your view option: \n \t 1. Year \n \t 2. Month \n \t 3. Week \n ");
          String myView = myReader.readLine();
          int optionView = Integer.parseInt(myView);
@@ -83,6 +101,7 @@ public class Driver {
        }
        // LISTING THE EVENTS
        else if (inpu == 3) {
+         System.out.println("-----------------------------------------------------------------------------------------");
          OurCalendar calendar = new OurCalendar(csvFile);
          System.out.println("How would you like to list your events?");
          System.out.println("\t1.Alphabetically\n\t2.Chronologically\n\t3.How I inputed it");
