@@ -24,11 +24,11 @@ public class OurCalendar extends Date {
     public void deleteEvent() {
 
     }
-
+/*
     private ArrayList<Event> filter(ArrayList<Event>, int week, int mnoth, int year) {
-      
-    }
 
+    }
+*/
     // "a" = alphabetical
     // "c" = chronological
     // "n" = order listed in csv file

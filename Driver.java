@@ -45,16 +45,17 @@ public class Driver {
        // VIEWING THE CALENDAR
        if (inpu == 2) {
         // CalendarViews test = new CalendarViews();
-         System.out.println("Please select your view option: \n \t 1. Year \n \t 2. Month \n \t 3. Week \n **NOTE: Must be lowercase -- for now**");
+         System.out.println("Please select your view option: \n \t 1. Year \n \t 2. Month \n \t 3. Week \n ");
          String myView = myReader.readLine();
-         if (myView.equals("year")){
+         int optionView = Integer.parseInt(myView);
+         if (optionView == 1){
            System.out.println("Please input the year you would like to see: ");
            String yeary = myReader.readLine();
            System.out.println(yeary);
            int yearr = Integer.parseInt(yeary);
            CalendarViews test = new CalendarViews("year",csvFile);
            System.out.println(test.printYear(yearr));
-         } else if (myView.equals("month")){
+         } else if (optionView == 2){
            System.out.println("Please input the year you would like to see: ");
            String yeary = myReader.readLine();
            int yearr = Integer.parseInt(yeary);
@@ -63,7 +64,7 @@ public class Driver {
            int monthh = Integer.parseInt(monthy);
            CalendarViews test = new CalendarViews("month",csvFile);
            System.out.println(test.printMonth(monthh, yearr));
-         } else if (myView.equals("week")){
+         } else if (optionView == 3){
            System.out.println("Please input the year you would like to see: ");
            String yeary = myReader.readLine();
            int yearr = Integer.parseInt(yeary);
@@ -107,6 +108,7 @@ public class Driver {
        }
        // LEAVING THE PROGRAM
        else if (inpu == 5){
+         System.out.println("-----------------------------------------------------------------------------------------");
          System.out.println("Thank you for being organized!");
          System.exit(1);
        }
