@@ -121,12 +121,25 @@ public class Driver {
            input = myReader.readLine();
            inpu = Integer.parseInt(input);
          }
-         if (inpu == 1) {
-           System.out.println(calendar.listEvent('a'));
-         } else if (inpu == 2) {
-           System.out.println(calendar.listEvent('c'));
-         } else if (inpu == 3) {
-           System.out.println(calendar.listEvent('z'));
+         char type = 'p';
+         if (inpu == 1) type = 'a';
+         else if (inpu == 2) type = 'c';
+         else if (inpu == 3) type = 'z';
+         CalendarViews c = new CalendarViews("list",csvFile);
+         System.out.println("Would you like to filter your events by month? (y/n)");
+         String filterReply = myReader.readLine();
+         while (!filterReply.equals("y") && !filterReply.equals("n")) {
+           System.out.println("Please enter a valid input (y/n)");
+           filterReply = myReader.readLine();
+         }
+         if (filterReply.equals("y")) {
+           System.out.println("Choose a year: ");
+           int inputYear = Integer.parseInt(myReader.readLine());
+           System.out.println("Choose a month: ");
+           int inputMonth = Integer.parseInt(myReader.readLine());
+           System.out.println(calendar.filter(type, c.getEvents(), inputMonth, inputYear));
+         } else if (filterReply.equals("n")) {
+           System.out.println(calendar.listEvent(type, c.getEvents()));
          }
        }
        // DELETING EVENTS
