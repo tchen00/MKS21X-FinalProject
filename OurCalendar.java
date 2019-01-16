@@ -24,11 +24,21 @@ public class OurCalendar extends Date {
     public void deleteEvent() {
 
     }
-/*
-    private ArrayList<Event> filter(ArrayList<Event>, int week, int mnoth, int year) {
 
+    public ArrayList<Event> filter(ArrayList<Event> e, int month, int year) {
+      ArrayList<Event> result = new ArrayList<Event>();
+      for (Event current : e) {
+        String date = current.getDate();
+        int m = Integer.parseInt(date.substring(0,date.indexOf("/")));
+        String sub = date.substring(date.indexOf("/")+1);
+        int y = Integer.parseInt(sub.substring(sub.indexOf("/")+1));
+        if (m == month && y == year) {
+          result.add(current);
+        }
+      }
+      return result;
     }
-*/
+
     // "a" = alphabetical
     // "c" = chronological
     // "n" = order listed in csv file
