@@ -131,8 +131,12 @@ However, in the future, the program will clear the entire csv for a new user.
 	- made selection of calendar views more user friendly
 	- made edits to OurCalendar
 	- learned how to make different colors in the terminal with System.out.println(...)
+### DAY 13 - Jan 15, 2019
+- **Grace** :octocat:
+	- moved code in Driver to OurCalendar to condense
+- **Tammy** :flower:
+
 
 FUTURE TO-DO LIST:
 	- delete events
-	- move Driver stuff to OurCalendar
 	- work on consistency and more user-friendly stuff
