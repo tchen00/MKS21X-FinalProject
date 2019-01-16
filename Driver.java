@@ -217,7 +217,7 @@ public class Driver {
         System.out.println(a.toString());
        }
      } catch (Exception e){
-       System.out.println(e);
+       //System.out.println(e);
        System.out.println("Please put in valid parameters");
        System.exit(1);
        }
