@@ -29,10 +29,10 @@ public class Driver extends CalendarViews{
   public static void main(String[] args) throws IOException {
     try {
     // UNCOMMENT THIS TO TEST COLORS
-       System.out.println(ANSI_WHITE_BACKGROUND+ ANSI_RED + "This text is red!" + ANSI_RESET);
+    /*   System.out.println(ANSI_WHITE_BACKGROUND+ ANSI_RED + "This text is red!" + ANSI_RESET);
        System.out.println(ANSI_YELLOW_BACKGROUND+ ANSI_GREEN + "Hi" + ANSI_RESET);
        System.out.println(ANSI_PURPLE_BACKGROUND+ ANSI_CYAN + "PERSON!! YOU ARE AMAZING!" + ANSI_RESET);
-
+       */
        BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
        BufferedReader br = new BufferedReader(new FileReader("life.csv"));
        String csvFile = "life.csv";
@@ -40,7 +40,7 @@ public class Driver extends CalendarViews{
        String cvsSplitBy = ",";
        FileWriter fw = new FileWriter(csvFile, true);
        PrintWriter out = new PrintWriter(fw);
-       System.out.println("Welcome to your Calendar and Scheduling: " + "\n" + "Below is the menu: \n \t 1. Add an Event \n \t 2. Print Calendar View with Events \n \t 3. List All Upcoming Events \n \t 4. Delete Event (IN THE FUTURE) \n \t 5. Exit Program" );
+       System.out.println(ANSI_CYAN+"Welcome to your Calendar and Scheduling: " + ANSI_RESET+"\n" + "Below is the menu: \n \t 1. Add an Event \n \t 2. Print Calendar View with Events \n \t 3. List All Upcoming Events \n \t 4. Delete Event (IN THE FUTURE) \n \t 5. Exit Program" );
        System.out.println("\nIf you are a new user who would like to start afresh and delete all old data, please input clear down below");
        System.out.println("\nPlease input your option: ");
        String input = myReader.readLine();

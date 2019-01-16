@@ -140,3 +140,4 @@ However, in the future, the program will clear the entire csv for a new user.
 FUTURE TO-DO LIST:
 	- delete events
 	- work on consistency and more user-friendly stuff
+	- to do list
