@@ -125,7 +125,8 @@ However, in the future, the program will clear the entire csv for a new user.
 		- had issues with atom at home so might resort to gedit for now
 ### DAY 12 - Jan 14, 2019 (DISCOVERY DAY) 
 - **Grace** :octocat:
-	-
+	- wrote filter method in OurCalendar to filter by month
+	- added to Driver filter option
 - **Tammy** :sob:
 	- made selection of calendar views more user friendly
 	- made edits to OurCalendar
