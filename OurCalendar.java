@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class OurCalendar extends Date {
+public class OurCalendar extends CalendarViews {
     private int year;
     private String file;
 
