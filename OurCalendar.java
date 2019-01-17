@@ -200,8 +200,9 @@ public class OurCalendar extends CalendarViews {
          // DELETING EVENTS
          else if (inpu == 4){
            CalendarViews c = new CalendarViews("list",csvFile);
+           OurCalendar listing = new OurCalendar("life.csv");
            System.out.println("Here are all your events: ");
-           System.out.println(listEvent('a',c.getEvents()));
+           System.out.println(listing.listEvent('a',c.getEvents()));
           // System.out.println("Please wait patiently for this future. Patience is bliss!");
          }
          // LEAVING THE PROGRAM
