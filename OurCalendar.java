@@ -63,6 +63,27 @@ public class OurCalendar extends CalendarViews {
       return result;
     }
 
+    public String listEventS(char type, ArrayList<Event> e) throws FileNotFoundException, IOException{
+      // e should usually be <someCalendarViewsthing>.getEvents()
+      // type determines alphabetical vs chronological
+      // for now, we're just printing out the events as seen in the csv file
+      String result = "\nYOUR EVENTS: \n\n";
+      if (type == 'a') {
+        Date.insertionSortA(e);
+      }
+      if (type == 'c') {
+        Date.insertionSortC(e);
+      }
+      int i = 1;
+      for (Event current : e) {
+        result += "\t" + "[ " + i +" ] "+ current.toShortString() + "\n\n";
+        i++;
+      }
+      return result;
+    }
+
+
+
     // TESTING COLORS -- UNCOMMENT TO TEST
         public static final String ANSI_RESET = "\u001B[0m";
         public static final String ANSI_BLACK = "\u001B[30m";
@@ -203,7 +224,7 @@ public class OurCalendar extends CalendarViews {
            CalendarViews c = new CalendarViews("list",csvFile);
            OurCalendar listing = new OurCalendar("life.csv");
            System.out.println("Here are all your events: ");
-           System.out.println(listing.listEvent('a',c.getEvents()));
+           System.out.println(listing.listEventS('a',c.getEvents()));
           // System.out.println("Please wait patiently for this future. Patience is bliss!");
          }
          // LEAVING THE PROGRAM
