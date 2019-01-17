@@ -22,7 +22,7 @@ public class CalendarViews extends Date {
   }
 
   // returns number of days since Jan 1 2019
-  public int numberOfDays(int day, int month, int year) {
+  public int numberOfDays(int year, int month, int day) {
     // exceptions handled
     if (!validDate(year, month, day)) {
       throw new IllegalArgumentException("Your date inputed is either not real or befoe Jan 1 2019");
@@ -47,34 +47,34 @@ public class CalendarViews extends Date {
   }
 
   // prints out all 12 months in one long column
-  public String printYear(int y) {
+  public String printYear(int year) {
     // exceptions handled
-    if (!validDate(y,1,1)) {
+    if (!validDate(year,1,1)) {
       throw new IllegalArgumentException("Your year inputed is before 2019. We do not dwell in the past, please enter another.");
     }
     String result = "";
     for (int i = 1; i < 13; i++) {
-      result += printMonth(i,y);
+      result += printMonth(year,i);
     }
     return result;
   }
 
   // prints out month with dot system to mark events
-  public String printMonth(int m, int y) {
+  public String printMonth(int year, int month) {
     // exceptions handled
-    if (!validDate(y,m,1)) {
+    if (!validDate(year,month,1)) {
       throw new IllegalArgumentException("Your year and month inputed are invalid.");
     }
     String result = "";
-    result += "\n"+convertToMonth(m).toUpperCase()+" "+y+"\n\n";
+    result += "\n"+convertToMonth(month).toUpperCase()+" "+year+"\n\n";
     result += "Sun\tMon\tTues\tWed\tThurs\tFri\tSat\n\n";
-    int firstDay = getFirstDayOfMonth(m,y);
+    int firstDay = getFirstDayOfMonth(year,month);
     for (int i = 0; i < firstDay; i++) {
       result += "\t";
     }
-    for (int i = 1; i <= daysInMonth(m,y); i++) {
+    for (int i = 1; i <= daysInMonth(month,year); i++) {
       result += i+" ";
-      String currentDate = m+"/"+i+"/"+y;
+      String currentDate = month+"/"+i+"/"+year;
       int count = 0; // keeping track of how many events on a certain day
       for (Event e : events) {
         if (currentDate.equals(e.getDate())) {
@@ -91,7 +91,7 @@ public class CalendarViews extends Date {
         }
       }
       result += "\t";
-      if (convertToNum(getWeekday(i,m,y)) == 6) {
+      if (convertToNum(getWeekday(year,month,i)) == 6) {
         result += "\n\n";
       }
     }
@@ -100,12 +100,12 @@ public class CalendarViews extends Date {
 
   // prints out week that the day given is in
   // note: this is void because the system directly prints it
-  public void printWeek(int day, int month, int year) {
+  public void printWeek(int year, int month, int day) {
     // exceptions handled
     if (!validDate(year,month,day)) {
       throw new IllegalArgumentException("Your year and month inputed are invalid.");
     }
-    int dayOfWeek = convertToNum(getWeekday(day, month, year));
+    int dayOfWeek = convertToNum(getWeekday(year, month, day));
     int startDate = day - dayOfWeek; // gets the Sunday of that week
     // figuring out how many rows of table to have
     // the max events a day of that week has
@@ -125,7 +125,7 @@ public class CalendarViews extends Date {
     String[][] table = new String[maxEvents+1][7];
     System.out.println(convertToMonth(month).toUpperCase() +" "+ year);
     for (int i = 0; i < 7; i++) {
-      table[0][i] = (startDate+i) + " " + getWeekday(startDate+i, month, year);
+      table[0][i] = (startDate+i) + " " + getWeekday(year, month, startDate+i);
       ArrayList<String> tempList = new ArrayList<String>();
       for (Event e : events) {
         String currentDate = month + "/" + (i+startDate) + "/" + year;
@@ -169,31 +169,31 @@ public class CalendarViews extends Date {
   }
 
   // returns weekday the month starts on (Sun=0, Mon=1 etc)
-  public int getFirstDayOfMonth(int month, int year) {
+  public int getFirstDayOfMonth(int year, int month) {
     // exceptions handled
     if (!validDate(year,month,1)) {
       throw new IllegalArgumentException("Your month and year inputed are not valid.");
     }
     // Jan 1 2019 = 2 (Tues)
-    int days = numberOfDays(1, month, year);
+    int days = numberOfDays(year, month, 1);
     return ((days % 7) + 2) % 7;
   }
 
   // if the user asks, return weekday that date is on
-  public String getWeekday(int day, int month, int year) {
+  public String getWeekday(int year, int month, int day) {
     if (!validDate(year,month,day)) {
       throw new IllegalArgumentException("Your date inputed is not valid.");
     }
-    int d = (getFirstDayOfMonth(month, year) + day - 1) % 7;
+    int d = (getFirstDayOfMonth(year, month) + day - 1) % 7;
     return convertToDay(d);
   }
 
   // returns number of Sundays in a month
   // exception checking, but uses getWeekday so it cannot be in Date
-  private int numberOfWeeks(int month, int year) {
+  private int numberOfWeeks(int year, int month) {
     int sundays = 0;
     for (int i = 0; i < daysInMonth(month, year); i++) {
-      if (getWeekday(i,month,year).equals("Sunday")) {
+      if (getWeekday(year,month,i).equals("Sunday")) {
         sundays++;
       }
     }
