@@ -5,7 +5,7 @@ import java.util.*;
 import java.io.IOException;
 import java.io.InputStreamReader;
 */
-public class Driver extends CalendarViews{
+public class Driver{
 //tested code from online
 // TESTING COLORS -- UNCOMMENT TO TEST
     public static final String ANSI_RESET = "\u001B[0m";
@@ -144,7 +144,6 @@ public class Driver extends CalendarViews{
        }
        // DELETING EVENTS
        else if (inpu == 4){
-
          System.out.println("Please wait patiently for this future. Patience is bliss!");
        }
        // LEAVING THE PROGRAM

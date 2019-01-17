@@ -199,7 +199,10 @@ public class OurCalendar extends CalendarViews {
          }
          // DELETING EVENTS
          else if (inpu == 4){
-           System.out.println("Please wait patiently for this future. Patience is bliss!");
+           CalendarViews c = new CalendarViews("list",csvFile);
+           System.out.println("Here are all your events: ");
+           System.out.println(listEvent('a',c.getEvents()));
+          // System.out.println("Please wait patiently for this future. Patience is bliss!");
          }
          // LEAVING THE PROGRAM
          else if (inpu == 5){

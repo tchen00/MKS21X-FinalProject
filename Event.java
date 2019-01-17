@@ -27,6 +27,10 @@ public class Event extends Date{
     return "Event: " + this.getName() + "\n" + "Date & Time: " + this.getDate() + "\t"+ this.getStartTime() + " - " + this.getEndTime()+ "\n" + "Notes: " + this.getNotes(); // still need to figure out a way to print time
   }
 
+  public String toShortString(){
+    return "Event: " + this.getName() + "\n" + "Date: " + this.getDate();
+  }
+
   public String getName(){
     return name;
   }
@@ -67,5 +71,7 @@ public class Event extends Date{
   public void addNote(String n){
     note = n;
   }
+
+
 
 }
