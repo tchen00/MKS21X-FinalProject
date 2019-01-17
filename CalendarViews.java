@@ -39,7 +39,7 @@ public class CalendarViews extends Date {
     // adding days from months
     for (int i = month - 1; i > 0; i--) {
       int tempDays = 0; // to keep track of how many days are in that month
-      tempDays = daysInMonth(i,year);
+      tempDays = daysInMonth(year,i);
       result += tempDays;
     }
     result += day - 1; // shouldn't count Jan 1st
@@ -72,7 +72,7 @@ public class CalendarViews extends Date {
     for (int i = 0; i < firstDay; i++) {
       result += "\t";
     }
-    for (int i = 1; i <= daysInMonth(month,year); i++) {
+    for (int i = 1; i <= daysInMonth(year,month); i++) {
       result += i+" ";
       String currentDate = month+"/"+i+"/"+year;
       int count = 0; // keeping track of how many events on a certain day
@@ -192,7 +192,7 @@ public class CalendarViews extends Date {
   // exception checking, but uses getWeekday so it cannot be in Date
   private int numberOfWeeks(int year, int month) {
     int sundays = 0;
-    for (int i = 0; i < daysInMonth(month, year); i++) {
+    for (int i = 0; i < daysInMonth(year, month); i++) {
       if (getWeekday(year,month,i).equals("Sunday")) {
         sundays++;
       }

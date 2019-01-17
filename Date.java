@@ -26,11 +26,11 @@ public class Date {
 
   // total of days in a month
   // easier to check for exceptions and get numberOfDays
-  public int daysInMonth(int m, int y) {
-    boolean leapYear = isLeapYear(y);
-    if (leapYear && m == 2) return 29;
-    else if (m == 2) return 28;
-    if ((m > 7 && m % 2 == 0) || (m < 8 && m % 2 == 1)) return 31;
+  public int daysInMonth(int year, int month) {
+    boolean leapYear = isLeapYear(year);
+    if (leapYear && month == 2) return 29;
+    else if (month == 2) return 28;
+    if ((month > 7 && month % 2 == 0) || (month < 8 && month % 2 == 1)) return 31;
     return 30;
   }
 
@@ -47,14 +47,14 @@ public class Date {
   }
 
   // from weekday to int
-  public int convertToNum(String d) {
-    if (d.equals("Sunday")) return 0;
-    if (d.equals("Monday")) return 1;
-    if (d.equals("Tuesday")) return 2;
-    if (d.equals("Wednesday")) return 3;
-    if (d.equals("Thursday")) return 4;
-    if (d.equals("Friday")) return 5;
-    if (d.equals("Saturday")) return 6;
+  public int convertToNum(String day) {
+    if (day.equals("Sunday")) return 0;
+    if (day.equals("Monday")) return 1;
+    if (day.equals("Tuesday")) return 2;
+    if (day.equals("Wednesday")) return 3;
+    if (day.equals("Thursday")) return 4;
+    if (day.equals("Friday")) return 5;
+    if (day.equals("Saturday")) return 6;
     return -1;
   }
 
