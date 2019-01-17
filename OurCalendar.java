@@ -5,7 +5,8 @@ public class OurCalendar extends CalendarViews {
     private int year;
     private String file;
 
-    public OurCalendar(String fileName) {
+    public OurCalendar(String fileName) throws FileNotFoundException, IOException {
+      super("",fileName);
       file = fileName;
     }
 
