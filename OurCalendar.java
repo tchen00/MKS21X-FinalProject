@@ -166,7 +166,7 @@ public class OurCalendar extends CalendarViews {
              String monthy = myReader.readLine();
              int monthh = Integer.parseInt(monthy);
              CalendarViews test = new CalendarViews("month",csvFile);
-             System.out.println(test.printMonth(monthh, yearr));
+             System.out.println(test.printMonth(yearr, monthh));
            } else if (optionView == 3){
              System.out.println("Please input the year you would like to see: ");
              String yeary = myReader.readLine();
@@ -178,7 +178,7 @@ public class OurCalendar extends CalendarViews {
              String dayye = myReader.readLine();
              int dayy = Integer.parseInt(dayye);
              CalendarViews test = new CalendarViews("week",csvFile);
-             test.printWeek(dayy, monthh, yearr);
+             test.printWeek(yearr, monthh, dayy);
            } else {
              System.out.println("Please put in a valid option");
              System.exit(1);
