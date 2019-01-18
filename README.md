@@ -137,17 +137,16 @@ However, in the future, the program will clear the entire csv for a new user.
 - **Tammy** :flower:
 	- started working on delete event
 		- apparently, in the child class' constructor you need to call super() or else it calls a default (empty) constructor in the parent classes
-### DAY 14 - Jan 16, 2019
+### DAY 15 - Jan 17, 2019
 - **Grace** :octocat:
-	- moved code in Driver to OurCalendar to condense
-- **Tammy** :flower:
-	- started working on delete event
-		- apparently, in the child class' constructor you need to call super() or else it calls a default (empty) constructor in the parent classes
-
+	- fixed bugs and such in OurCalendar
+	- edited for consistency in Date, OurCalendar, CalendarViews	
+	- updated prototype
+- **Tammy** :sparkles:
+	- 
 
 
 
 FUTURE TO-DO LIST:
 	- delete events
-	- work on consistency and more user-friendly stuff
 	- to do list
