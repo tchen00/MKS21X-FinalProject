@@ -6,6 +6,7 @@ public class OurCalendar extends CalendarViews {
     private int year;
     private String file;
     private String output;
+    private ArrayList<String> toDoList;
 
     public OurCalendar(String fileName) throws FileNotFoundException, IOException {
       super("",fileName);
@@ -18,10 +19,6 @@ public class OurCalendar extends CalendarViews {
       FileWriter fw = new FileWriter(f,false);
       fw.write("");
       fw.close();
-    }
-
-    public void createEvent() {
-
     }
 
     public void deleteEvent(String fileName, String removeTerm) {
@@ -55,6 +52,15 @@ public class OurCalendar extends CalendarViews {
         e.printStackTrace();
         //JOpetionPane.showMessageDialog(null,"Error");
       }
+    }
+
+    // print out the to do list
+    public String toStringToDo() {
+      String result = "";
+      for (int i = 0; i < toDoList.size(); i++) {
+        result += "\t"+(i+1)+". "+toDoList.get(i)+"\n";
+      }
+      return result;
     }
 
     // filter events by month
