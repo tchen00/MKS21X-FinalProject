@@ -142,6 +142,7 @@ However, in the future, the program will clear the entire csv for a new user.
 	- fixed bugs and such in OurCalendar
 	- edited for consistency in Date, OurCalendar, CalendarViews	
 	- updated prototype
+	- added filter by day option
 - **Tammy** :sparkles:
 	- 
 
