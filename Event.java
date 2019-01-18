@@ -28,7 +28,7 @@ public class Event extends Date{
   }
 
   public String toShortString(){
-    return "Event: " + this.getName() + " | " + "Date: " + this.getDate();
+    return  this.getName() + " | "  + this.getDate();
   }
 
   public String getName(){

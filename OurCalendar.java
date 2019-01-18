@@ -224,7 +224,11 @@ public class OurCalendar extends CalendarViews {
            CalendarViews c = new CalendarViews("list",csvFile);
            OurCalendar listing = new OurCalendar("life.csv");
            System.out.println("Here are all your events: ");
+           System.out.println("-------------------------- Event + Date -----------------  ");
            System.out.println(listing.listEventS('a',c.getEvents()));
+           System.out.print("Select the event you wish to DELETE: "); 
+           String selection = myReader.readLine();
+
           // System.out.println("Please wait patiently for this future. Patience is bliss!");
          }
          // LEAVING THE PROGRAM
