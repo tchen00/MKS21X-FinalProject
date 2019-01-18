@@ -24,8 +24,37 @@ public class OurCalendar extends CalendarViews {
 
     }
 
-    public void deleteEvent() {
+    public void deleteEvent(String fileName, String removeTerm) {
+      String tempFile = "test.csv";
+      File oldFile = new File(fileName);
+      File newFile = new File(tempFile);
+      String eName = ""; String eMonth = ""; String eDay = ""; String eYear = "";
+      try {
+        FileWriter fw = new FileWriter(tempFile, true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        PrintWriter pw = new PrintWriter(bw);
+        Scanner x = new Scanner(new File(fileName));
+        x.useDelimiter("[,\n]");
 
+        while(x.hasNext()){
+          eName = x.next();
+          eYear = x.next();
+          eMonth = x.next();
+          if (!eName.equals(removeTerm)){
+            pw.println(eName + "," + eYear + "," + eMonth + "," + eDay);
+          }
+        }
+
+        x.close();
+        pw.flush();
+        pw.close();
+        oldFile.delete();
+        File dump = new File(fileName);
+        newFile.renameTo(dump);
+      } catch (Exception e){
+        e.printStackTrace();
+        //JOpetionPane.showMessageDialog(null,"Error");
+      }
     }
 
     // filter events by month
@@ -273,8 +302,7 @@ public class OurCalendar extends CalendarViews {
            System.out.print("Select the event you wish to" + ANSI_RED + " DELETE: " + ANSI_RESET);
            String selection = myReader.readLine();
            System.out.println(listing.findEvent(Integer.parseInt(selection)));
-           System.out.println("Be aware that this deletes the event forever. You will not be able to recover it back!");
-           System.out.println("Would you still like to clear? (y/n)");
+           System.out.println("Be aware that this deletes the event forever. You will not be able to recover it back! Would you still like to clear? (y/n)");
            String answer = myReader.readLine();
            while (!answer.equals("y") && !answer.equals("n")) {
              System.out.print("Would you still like to clear? (y/n)");
@@ -282,6 +310,9 @@ public class OurCalendar extends CalendarViews {
            }
            if (answer.equals("y")){
             System.out.println("You are deleting: " + listing.findEvent(Integer.parseInt(selection)));
+            String [] arrofStr = (listing.findEvent(Integer.parseInt(selection))).split(" | ");
+            listing.deleteEvent("life.csv", arrofStr[0]);
+
            }
            /*
            FileWriter reader2 = new FileWriter(csvFile, true);
