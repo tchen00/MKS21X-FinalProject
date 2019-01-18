@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import java.*;
 
 public class OurCalendar extends CalendarViews {
     private int year;
@@ -235,6 +236,25 @@ public class OurCalendar extends CalendarViews {
            System.out.print("Select the event you wish to" + ANSI_RED + " DELETE: " + ANSI_RESET);
            String selection = myReader.readLine();
            System.out.println(listing.findEvent(Integer.parseInt(selection)));
+           System.out.println("Be aware that this deletes the event forever. You will not be able to recover it back!");
+           System.out.println("Would you still like to clear? (y/n)");
+           String answer = myReader.readLine();
+           while (!answer.equals("y") && !answer.equals("n")) {
+             System.out.print("Would you still like to clear? (y/n)");
+             answer = myReader.readLine();
+           }
+           if (answer.equals("y")){
+            System.out.println("You are deleting: " + listing.findEvent(Integer.parseInt(selection)));
+           }
+           /*
+           FileWriter reader2 = new FileWriter(csvFile, true);
+           List<String[]> allElements = reader2.readAll();
+           allElements.remove(2);
+           FileWriter sw = new FileWriter(life.csv);
+           CSVWriter writer = new CSVWriter(sw);
+           writer.writeAll(allElements);
+           writer.close();
+           */
           // System.out.println("Please wait patiently for this future. Patience is bliss!");
          }
          // LEAVING THE PROGRAM
