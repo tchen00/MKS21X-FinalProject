@@ -22,7 +22,7 @@ public class CalendarViews extends Date {
   }
 
   // returns number of days since Jan 1 2019
-  public int numberOfDays(int year, int month, int day) {
+  private int numberOfDays(int year, int month, int day) {
     // exceptions handled
     if (!validDate(year, month, day)) {
       throw new IllegalArgumentException("Your date inputed is either not real or befoe Jan 1 2019");

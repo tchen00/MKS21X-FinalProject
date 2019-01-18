@@ -28,7 +28,8 @@ public class OurCalendar extends CalendarViews {
 
     }
 
-    public String filter(char type, ArrayList<Event> e, int month, int year) throws FileNotFoundException,IOException {
+    // filter events by month
+    public String filterM(char type, ArrayList<Event> e, int year, int month) throws FileNotFoundException,IOException {
       if (!validDate(year, month, 1)) {
         throw new IllegalArgumentException("Please enter a valid date");
       }
@@ -39,6 +40,25 @@ public class OurCalendar extends CalendarViews {
         String sub = date.substring(date.indexOf("/")+1);
         int y = Integer.parseInt(sub.substring(sub.indexOf("/")+1));
         if (m == month && y == year) {
+          result.add(current);
+        }
+      }
+      return listEvent(type, result);
+    }
+
+    // filter events by month
+    public String filterD(char type, ArrayList<Event> e, int year, int month, int day) throws FileNotFoundException, IOException {
+      if (!validDate(year, month, day)) {
+        throw new IllegalArgumentException("Please enter a valid date");
+      }
+      ArrayList<Event> result = new ArrayList<Event>();
+      for (Event current : e) {
+        String date = current.getDate();
+        int m = Integer.parseInt(date.substring(0,date.indexOf("/")));
+        String sub = date.substring(date.indexOf("/")+1);
+        int d = Integer.parseInt(sub.substring(0,sub.indexOf("/")));
+        int y = Integer.parseInt(sub.substring(sub.indexOf("/")+1));
+        if (m == month && y == year && d == day) {
           result.add(current);
         }
       }
@@ -210,18 +230,35 @@ public class OurCalendar extends CalendarViews {
            else if (inpu == 2) type = 'c';
            else if (inpu == 3) type = 'z';
            CalendarViews c = new CalendarViews("list",csvFile);
-           System.out.println("Would you like to filter your events by month? (y/n)");
+           System.out.println("Would you like to filter your events? (y/n)");
            String filterReply = myReader.readLine();
            while (!filterReply.equals("y") && !filterReply.equals("n")) {
              System.out.println("Please enter a valid input (y/n)");
              filterReply = myReader.readLine();
            }
            if (filterReply.equals("y")) {
-             System.out.println("Choose a year: ");
-             int inputYear = Integer.parseInt(myReader.readLine());
-             System.out.println("Choose a month: ");
-             int inputMonth = Integer.parseInt(myReader.readLine());
-             System.out.println(calendar.filter(type, c.getEvents(), inputMonth, inputYear));
+             System.out.println("How would you like to filter them?\n");
+             System.out.println("\t1.Month\n\t2.Day");
+             String filterType = myReader.readLine();
+             while(!filterType.equals("1") && !filterType.equals("2")) {
+               System.out.println("Please pick one of the options:");
+               filterType = myReader.readLine();
+             }
+             if (filterType.equals("1")) {
+               System.out.println("Choose a year: ");
+               int inputYear = Integer.parseInt(myReader.readLine());
+               System.out.println("Choose a month: ");
+               int inputMonth = Integer.parseInt(myReader.readLine());
+               System.out.println(calendar.filterM(type, c.getEvents(), inputYear, inputMonth));
+             } else if (filterType.equals("2")) {
+               System.out.println("Choose a year: ");
+               int inputYear = Integer.parseInt(myReader.readLine());
+               System.out.println("Choose a month: ");
+               int inputMonth = Integer.parseInt(myReader.readLine());
+               System.out.println("Choose a day: ");
+               int inputDay = Integer.parseInt(myReader.readLine());
+               System.out.println(calendar.filterD(type, c.getEvents(),inputYear,inputMonth,inputDay));
+             }
            } else if (filterReply.equals("n")) {
              System.out.println(calendar.listEvent(type, c.getEvents()));
            }
