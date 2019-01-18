@@ -4,6 +4,7 @@ import java.util.*;
 public class OurCalendar extends CalendarViews {
     private int year;
     private String file;
+    private String output;
 
     public OurCalendar(String fileName) throws FileNotFoundException, IOException {
       super("",fileName);
@@ -63,10 +64,9 @@ public class OurCalendar extends CalendarViews {
       return result;
     }
 
+
+//This lists a short and more condensed version of listEvent
     public String listEventS(char type, ArrayList<Event> e) throws FileNotFoundException, IOException{
-      // e should usually be <someCalendarViewsthing>.getEvents()
-      // type determines alphabetical vs chronological
-      // for now, we're just printing out the events as seen in the csv file
       String result = "\nYOUR EVENTS: \n\n";
       if (type == 'a') {
         Date.insertionSortA(e);
@@ -76,13 +76,19 @@ public class OurCalendar extends CalendarViews {
       }
       int i = 1;
       for (Event current : e) {
-        result += "\t" + "[ " + i +" ] "+ current.toShortString() + "\n\n";
+        output  += "\t" + "[ " + i +" ] "+ current.toShortString() + "\n\n";
         i++;
       }
-      return result;
+      return output;
     }
 
-
+    public String findEvent(int n) throws FileNotFoundException, IOException{
+      String [] outputSplit = output.split("\t");
+      String [] outty = Arrays.copyOfRange(outputSplit, 1, outputSplit.length);
+      String test = outty[n-1];
+      String testy = test.substring(6,test.length());
+      return testy;
+    }
 
     // TESTING COLORS -- UNCOMMENT TO TEST
         public static final String ANSI_RESET = "\u001B[0m";
@@ -226,9 +232,9 @@ public class OurCalendar extends CalendarViews {
            System.out.println("Here are all your events: ");
            System.out.println("-------------------------- Event + Date -----------------  ");
            System.out.println(listing.listEventS('a',c.getEvents()));
-           System.out.print("Select the event you wish to DELETE: "); 
+           System.out.print("Select the event you wish to" + ANSI_RED + " DELETE: " + ANSI_RESET);
            String selection = myReader.readLine();
-
+           System.out.println(listing.findEvent(Integer.parseInt(selection)));
           // System.out.println("Please wait patiently for this future. Patience is bliss!");
          }
          // LEAVING THE PROGRAM
