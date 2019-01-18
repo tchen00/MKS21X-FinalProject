@@ -11,6 +11,7 @@ public class OurCalendar extends CalendarViews {
     public OurCalendar(String fileName) throws FileNotFoundException, IOException {
       super("",fileName);
       file = fileName;
+      toDoList = new ArrayList<String>();
     }
 
     // Note TO BE COMPLETED LATER
@@ -61,6 +62,14 @@ public class OurCalendar extends CalendarViews {
         result += "\t"+(i+1)+". "+toDoList.get(i)+"\n";
       }
       return result;
+    }
+
+    public void addToDo(String s) {
+      toDoList.add(s);
+    }
+
+    public void removeToDo(String s) {
+      toDoList.remove(s);
     }
 
     // filter events by month
