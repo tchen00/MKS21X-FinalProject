@@ -311,8 +311,8 @@ public class OurCalendar extends CalendarViews {
          else if (inpu == 4){
            CalendarViews c = new CalendarViews("list",csvFile);
            OurCalendar listing = new OurCalendar("life.csv");
-           System.out.println("Here are all your events: ");
-           System.out.println("-------------------------- Event + Date -----------------  ");
+           System.out.println("Here are all your events: \n");
+           System.out.println("-------------------------- Event + Date ---------------------  ");
            System.out.println(listing.listEventS('a',c.getEvents()));
            System.out.print("Select the event you wish to" + ANSI_RED + " DELETE: " + ANSI_RESET);
            String selection = myReader.readLine();
@@ -326,7 +326,7 @@ public class OurCalendar extends CalendarViews {
            if (answer.equals("y")){
             System.out.println("You are deleting: " + listing.findEvent(Integer.parseInt(selection)));
             String [] arrofStr = (listing.findEvent(Integer.parseInt(selection))).split(" | ");
-            listing.deleteEvent("life.csv", arrofStr[0]);
+          //  listing.deleteEvent("life.csv", arrofStr[0]);
 
            }
            /*
