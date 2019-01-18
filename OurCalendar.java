@@ -188,7 +188,7 @@ public class OurCalendar extends CalendarViews {
          String cvsSplitBy = ",";
          FileWriter fw = new FileWriter(csvFile, true);
          PrintWriter out = new PrintWriter(fw);
-         System.out.println("Welcome to your Calendar and Scheduling: " + "\n" + "Below is the menu: \n \t 1. Add an Event \n \t 2. Print Calendar View with Events \n \t 3. List All Upcoming Events \n \t 4. Delete Event (IN THE FUTURE) \n \t 5. Exit Program" );
+         System.out.println("Welcome to your Calendar and Scheduling: " + "\n" + "Below is the menu: \n \t 1. Add an Event \n \t 2. Print Calendar View with Events \n \t 3. List All Upcoming Events \n \t 4. Delete Event (IN PROGRESS) \n \t 5. To Do List \n \t 6. Exit Program" );
          System.out.println("\nIf you are a new user who would like to start afresh and delete all old data, please input clear down below");
          System.out.println("\nPlease input your option: ");
          String input = myReader.readLine();
@@ -341,7 +341,7 @@ public class OurCalendar extends CalendarViews {
           // System.out.println("Please wait patiently for this future. Patience is bliss!");
          }
          // LEAVING THE PROGRAM
-         else if (inpu == 5){
+         else if (inpu == 6){
            System.out.println("-----------------------------------------------------------------------------------------");
            System.out.println("Thank you for being organized!");
            System.exit(1);
@@ -409,6 +409,24 @@ public class OurCalendar extends CalendarViews {
           a.addNote(myNote);
           System.out.println("---------------------------------------------------------------");
           System.out.println(a.toString());
+         }
+         else if (inpu == 5) {
+           System.out.println("You've switched to your To Do List mode:");
+           System.out.println("\t 1. View \n \t 2. Add \n \t 3. Remove \n");
+           System.out.println("Please enter your option: ");
+           int toDoChoice = Integer.parseInt(myReader.readLine());
+           while (toDoChoice > 3 || toDoChoice < 1) {
+             System.out.println("Please enter a valid option:\n");
+             toDoChoice = Integer.parseInt(myReader.readLine());
+           }
+           if (toDoChoice == 1) {
+             OurCalendar cToDo = new OurCalendar("life.csv");
+             System.out.println(cToDo.toStringToDo());
+           } else if (toDoChoice == 2) {
+
+           } else if (toDoChoice == 3) {
+
+           }
          }
        } catch (Exception e){
          //System.out.println(e);
