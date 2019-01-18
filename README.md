@@ -140,11 +140,16 @@ However, in the future, the program will clear the entire csv for a new user.
 ### DAY 15 - Jan 17, 2019
 - **Grace** :octocat:
 	- fixed bugs and such in OurCalendar
-	- edited for consistency in Date, OurCalendar, CalendarViews	
+	- edited for consistency in Date, OurCalendar, CalendarViews
 	- updated prototype
 	- added filter by day option
 - **Tammy** :sparkles:
-	- 
+	- continued working on the deleting element of menu
+### DAY 16 - Jan 18, 2019
+- **Grace** :octocat:
+	-
+- **Tammy** :sparkles:
+	-
 
 
 
