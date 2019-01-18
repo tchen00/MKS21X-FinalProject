@@ -1,8 +1,8 @@
 # MKS21X-FinalProject
 
 ## :date: INSTRUCTIONS
-Our project is an interactive calendar and planner. javac and java OurCalendar and a menu will pop up with options.
-Typing in the number of the option will work all the time with the exception of the view of the calendar. There, type in year, month, or week.
+Our project is an interactive calendar and planner. Please run the calendar by typing bash run.sh in the command line.
+A menu will pop up with options. Type the number of the option you would like to select.
 A csv file comes with the calendar, life.csv. Inside, there are already events listed for the purposes of the demo.
 However, in the future, the program will clear the entire csv for a new user.
 
