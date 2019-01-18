@@ -137,7 +137,7 @@ public class Driver{
            int inputYear = Integer.parseInt(myReader.readLine());
            System.out.println("Choose a month: ");
            int inputMonth = Integer.parseInt(myReader.readLine());
-           System.out.println(calendar.filter(type, c.getEvents(), inputMonth, inputYear));
+           System.out.println(calendar.filterM(type, c.getEvents(), inputMonth, inputYear));
          } else if (filterReply.equals("n")) {
            System.out.println(calendar.listEvent(type, c.getEvents()));
          }

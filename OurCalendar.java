@@ -26,7 +26,8 @@ public class OurCalendar extends CalendarViews {
 
     }
 
-    public String filter(char type, ArrayList<Event> e, int month, int year) throws FileNotFoundException,IOException {
+    // filter events by month
+    public String filterM(char type, ArrayList<Event> e, int month, int year) throws FileNotFoundException,IOException {
       if (!validDate(year, month, 1)) {
         throw new IllegalArgumentException("Please enter a valid date");
       }
@@ -37,6 +38,25 @@ public class OurCalendar extends CalendarViews {
         String sub = date.substring(date.indexOf("/")+1);
         int y = Integer.parseInt(sub.substring(sub.indexOf("/")+1));
         if (m == month && y == year) {
+          result.add(current);
+        }
+      }
+      return listEvent(type, result);
+    }
+
+    // filter events by month
+    public String filterD(char type, ArrayList<Event> e, int year, int month, int day) throws FileNotFoundException, IOException {
+      if (!validDate(year, month, day)) {
+        throw new IllegalArgumentException("Please enter a valid date");
+      }
+      ArrayList<Event> result = new ArrayList<Event>();
+      for (Event current : e) {
+        String date = current.getDate();
+        int m = Integer.parseInt(date.substring(0,date.indexOf("/")));
+        String sub = date.substring(date.indexOf("/")+1);
+        int d = Integer.parseInt(sub.substring(0,sub.indexOf("/")));
+        int y = Integer.parseInt(sub.substring(sub.indexOf("/")+1));
+        if (m == month && y == year && d == day) {
           result.add(current);
         }
       }
@@ -214,7 +234,7 @@ public class OurCalendar extends CalendarViews {
              int inputYear = Integer.parseInt(myReader.readLine());
              System.out.println("Choose a month: ");
              int inputMonth = Integer.parseInt(myReader.readLine());
-             System.out.println(calendar.filter(type, c.getEvents(), inputMonth, inputYear));
+             System.out.println(calendar.filterM(type, c.getEvents(), inputMonth, inputYear));
            } else if (filterReply.equals("n")) {
              System.out.println(calendar.listEvent(type, c.getEvents()));
            }
