@@ -5,19 +5,26 @@ import java.nio.file.*;
 
 public class OurCalendar extends CalendarViews {
     private int year;
-    private String file;
+    private String CSV;
+    private String txt;
     private String output;
     private ArrayList<String> toDoList;
 
-    public OurCalendar(String fileName) throws FileNotFoundException, IOException {
-      super("",fileName);
-      file = fileName;
+    public OurCalendar(String csvFile, String txtFile) throws FileNotFoundException, IOException {
+      super("",csvFile);
+      CSV = csvFile;
+      txt = txtFile;
       toDoList = new ArrayList<String>();
+      File f = new File(txtFile);
+      Scanner in = new Scanner(f);
+      while (in.hasNext()) {
+        toDoList.add(in.nextLine());
+      }
     }
 
     // Note TO BE COMPLETED LATER
     public void clearAll() throws IOException {
-      File f = new File(file);
+      File f = new File(CSV);
       FileWriter fw = new FileWriter(f,false);
       fw.write("");
       fw.close();
@@ -65,12 +72,30 @@ public class OurCalendar extends CalendarViews {
       return result;
     }
 
-    public void addToDo(String s) {
+    public void addToDo(String s) throws IOException{
       toDoList.add(s);
+      FileWriter w = new FileWriter(txt);
+      PrintWriter out = new PrintWriter(w);
+      for (String i : toDoList) {
+        out.write(i+"\n");
+      }
+      out.flush();
+      w.flush();
+      out.close();
+      w.close();
     }
 
-    public void removeToDo(String s) {
-      toDoList.remove(s);
+    public void removeToDo(int s) throws IOException{
+      toDoList.remove(s-1);
+      FileWriter w = new FileWriter(txt);
+      PrintWriter out = new PrintWriter(w);
+      for (String i : toDoList) {
+        out.write(i+"\n");
+      }
+      out.flush();
+      w.flush();
+      out.close();
+      w.close();
     }
 
     // filter events by month
@@ -202,7 +227,7 @@ public class OurCalendar extends CalendarViews {
              answer = myReader.readLine();
            }
            if (answer.equals("y")) {
-             OurCalendar clearing = new OurCalendar(csvFile);
+             OurCalendar clearing = new OurCalendar(csvFile, "todo.txt");
              clearing.clearAll();
              System.out.println("Cleared!");
            }
@@ -210,7 +235,7 @@ public class OurCalendar extends CalendarViews {
          }
          int inpu = Integer.parseInt(input);
          // NOT AN OPTION
-         while (inpu > 5){
+         while (inpu > 6){
            System.out.println("-----------------------------------------------------------------------------------------");
            System.out.println("Please enter a valid option: ");
            input = myReader.readLine();
@@ -259,7 +284,7 @@ public class OurCalendar extends CalendarViews {
          // LISTING THE EVENTS
          else if (inpu == 3) {
            System.out.println("-----------------------------------------------------------------------------------------");
-           OurCalendar calendar = new OurCalendar(csvFile);
+           OurCalendar calendar = new OurCalendar(csvFile, "todo.txt");
            System.out.println("How would you like to list your events?");
            System.out.println("\t1.Alphabetically\n\t2.Chronologically\n\t3.How I inputed it");
            System.out.println("Please enter your option:");
@@ -311,7 +336,7 @@ public class OurCalendar extends CalendarViews {
          // DELETING EVENTS
          else if (inpu == 4){
            CalendarViews c = new CalendarViews("list",csvFile);
-           OurCalendar listing = new OurCalendar("life.csv");
+           OurCalendar listing = new OurCalendar("life.csv","todo.txt");
            System.out.println("Here are all your events: \n");
            System.out.println("-------------------------- Event + Date ---------------------  ");
            System.out.println(listing.listEventS('z',c.getEvents()));
@@ -460,17 +485,23 @@ public class OurCalendar extends CalendarViews {
              System.out.println("Please enter a valid option:\n");
              toDoChoice = Integer.parseInt(myReader.readLine());
            }
+           OurCalendar cToDo = new OurCalendar("life.csv","todo.txt");
            if (toDoChoice == 1) {
-             OurCalendar cToDo = new OurCalendar("life.csv");
+             System.out.println("\tTO DO LIST");
              System.out.println(cToDo.toStringToDo());
            } else if (toDoChoice == 2) {
-
+             System.out.println("What would you like to add?");
+             String task = myReader.readLine();
+             cToDo.addToDo(task);
            } else if (toDoChoice == 3) {
-
+             System.out.println(cToDo.toStringToDo());
+             System.out.println("Please enter the number of the task you would like to remove:");
+             int removed = Integer.parseInt(myReader.readLine());
+             cToDo.removeToDo(removed);
            }
          }
        } catch (Exception e){
-         //System.out.println(e);
+        // System.out.println(e);
          System.out.println("Please put in valid parameters");
          System.exit(1);
          }
