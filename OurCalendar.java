@@ -176,11 +176,11 @@ public class OurCalendar extends CalendarViews {
 
     public static void main(String[] args) throws IOException {
       try {
-      // UNCOMMENT THIS TO TEST COLORS
+      /*
          System.out.println(ANSI_WHITE_BACKGROUND+ ANSI_RED + "This text is red!" + ANSI_RESET);
          System.out.println(ANSI_YELLOW_BACKGROUND+ ANSI_GREEN + "Hi" + ANSI_RESET);
          System.out.println(ANSI_PURPLE_BACKGROUND+ ANSI_CYAN + "PERSON!! YOU ARE AMAZING!" + ANSI_RESET);
-
+     */
          BufferedReader myReader = new BufferedReader(new InputStreamReader(System.in));
          BufferedReader br = new BufferedReader(new FileReader("life.csv"));
          String csvFile = "life.csv";
@@ -313,7 +313,7 @@ public class OurCalendar extends CalendarViews {
            OurCalendar listing = new OurCalendar("life.csv");
            System.out.println("Here are all your events: \n");
            System.out.println("-------------------------- Event + Date ---------------------  ");
-           System.out.println(listing.listEventS('a',c.getEvents()));
+           System.out.println(listing.listEventS('z',c.getEvents()));
            System.out.print("Select the event you wish to" + ANSI_RED + " DELETE: " + ANSI_RESET);
            String selection = myReader.readLine();
            System.out.println(listing.findEvent(Integer.parseInt(selection)));
@@ -325,7 +325,10 @@ public class OurCalendar extends CalendarViews {
            }
            if (answer.equals("y")){
             System.out.println("You are deleting: " + listing.findEvent(Integer.parseInt(selection)));
-            String [] arrofStr = (listing.findEvent(Integer.parseInt(selection))).split(" | ");
+            String [] arrofStr = (listing.findEvent(Integer.parseInt(selection))).split("|");
+            //System.out.println(Arrays.toString(arrofStr));
+            //System.out.println(arrofStr[1]);
+
           //  listing.deleteEvent("life.csv", arrofStr[0]);
 
            }
