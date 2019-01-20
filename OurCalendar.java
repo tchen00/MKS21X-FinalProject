@@ -234,7 +234,7 @@ public class OurCalendar extends CalendarViews {
          }
          int inpu = Integer.parseInt(input);
          // NOT AN OPTION
-         while (inpu > 5){
+         while (inpu > 6){
            System.out.println("-----------------------------------------------------------------------------------------");
            System.out.println("Please enter a valid option: ");
            input = myReader.readLine();
@@ -449,6 +449,7 @@ public class OurCalendar extends CalendarViews {
            }
            OurCalendar cToDo = new OurCalendar("life.csv","todo.txt");
            if (toDoChoice == 1) {
+             System.out.println("\tTO DO LIST");
              System.out.println(cToDo.toStringToDo());
            } else if (toDoChoice == 2) {
              System.out.println("What would you like to add?");

@@ -147,9 +147,22 @@ However, in the future, the program will clear the entire csv for a new user.
 	- continued working on the deleting element of menu
 ### DAY 16 - Jan 18, 2019
 - **Grace** :octocat:
-	-
+	- started to do list feature
+	- toString written for to do list
+	- added to do list to menu
+	- added sh file
 - **Tammy** :sparkles:
 	-
+### DAY 17 - Jan 19, 2019
+- **Grace** :worried:
+	- studied for APCS final
+	- neglected APCS project :disappointed:
+- **Tammy** :boom:
+	-
+### DAY 18 - Jan 20, 2019
+- **Grace** :octocat:
+	- changed to do list system to a txt file reader
+	- finished to do list basics (view, add, remove)
 
 
 
