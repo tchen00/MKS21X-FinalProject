@@ -214,6 +214,9 @@ public class OurCalendar extends CalendarViews {
          String cvsSplitBy = ",";
          FileWriter fw = new FileWriter(csvFile, true);
          PrintWriter out = new PrintWriter(fw);
+         boolean end = false;
+         while (!end) {
+         System.out.println(ANSI_BLUE_BACKGROUND + ANSI_WHITE + "                                                                                                                        " + ANSI_RESET);
          System.out.println("Welcome to your Calendar and Scheduling: " + "\n" + "Below is the menu: \n \t 1. Add an Event \n \t 2. Print Calendar View with Events \n \t 3. List All Upcoming Events \n \t 4. Delete Event (IN PROGRESS) \n \t 5. To Do List \n \t 6. Exit Program" );
          System.out.println("\nIf you are a new user who would like to start afresh and delete all old data, please input clear down below");
          System.out.println("\nPlease input your option: ");
@@ -370,12 +373,12 @@ public class OurCalendar extends CalendarViews {
             BufferedReader test = new BufferedReader(new FileReader("test.csv"));
             String strCurrentLine;
             int index = 1;
-            OurCalendar clearer = new OurCalendar("tester2.csv");
+            OurCalendar clearer = new OurCalendar("life.csv","todo.txt");
             clearer.clearAll();
-            while ((strCurrentLine = br.readLine()) != null) {
+            while ((strCurrentLine = test.readLine()) != null) {
               if (index != select){
                String[] neww = strCurrentLine.split(",");
-               FileWriter fwr = new FileWriter("tester2.csv", true);
+               FileWriter fwr = new FileWriter("life.csv", true);
                for (int i = 0; i < neww.length;i++){
                  fwr.write(neww[i]);
                  fwr.write(",");
@@ -410,6 +413,7 @@ public class OurCalendar extends CalendarViews {
          else if (inpu == 6){
            System.out.println("-----------------------------------------------------------------------------------------");
            System.out.println("Thank you for being organized!");
+           end = true;
            System.exit(1);
          }
          // ADDING EVENTS
@@ -500,15 +504,16 @@ public class OurCalendar extends CalendarViews {
              cToDo.removeToDo(removed);
            }
          }
-       } catch (Exception e){
+       }
+     } catch (Exception e){
         // System.out.println(e);
          System.out.println("Please put in valid parameters");
          System.exit(1);
          }
+       }
         // System.out.print("Input your start time :");
         // myName = myReader.readLine();
         // System.out.println("Event start time is : "+ myName);
         // String endTime = myRead.readLine();
 
-     }
 }
