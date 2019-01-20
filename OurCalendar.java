@@ -71,22 +71,30 @@ public class OurCalendar extends CalendarViews {
       return result;
     }
 
-    public void addToDo(String s) {
+    public void addToDo(String s) throws IOException{
       toDoList.add(s);
       FileWriter w = new FileWriter(txt);
       PrintWriter out = new PrintWriter(w);
       for (String i : toDoList) {
-        out.write(i);
+        out.write(i+"\n");
       }
+      out.flush();
+      w.flush();
+      out.close();
+      w.close();
     }
 
-    public void removeToDo(int s) {
-      toDoList.remove(s);
+    public void removeToDo(int s) throws IOException{
+      toDoList.remove(s-1);
       FileWriter w = new FileWriter(txt);
       PrintWriter out = new PrintWriter(w);
       for (String i : toDoList) {
-        out.write(i);
+        out.write(i+"\n");
       }
+      out.flush();
+      w.flush();
+      out.close();
+      w.close();
     }
 
     // filter events by month
@@ -454,7 +462,7 @@ public class OurCalendar extends CalendarViews {
            }
          }
        } catch (Exception e){
-         //System.out.println(e);
+        // System.out.println(e);
          System.out.println("Please put in valid parameters");
          System.exit(1);
          }
