@@ -152,20 +152,18 @@ However, in the future, the program will clear the entire csv for a new user.
 	- added to do list to menu
 	- added sh file
 - **Tammy** :sparkles:
-	-
+	- struggled with deleting events
 ### DAY 17 - Jan 19, 2019
 - **Grace** :worried:
 	- studied for APCS final
 	- neglected APCS project :disappointed:
 - **Tammy** :boom:
-	-
+	- had CYBERSTUY but tried to continue deleting events
 ### DAY 18 - Jan 20, 2019
 - **Grace** :octocat:
 	- changed to do list system to a txt file reader
 	- finished to do list basics (view, add, remove)
-
-
-
-FUTURE TO-DO LIST:
-	- delete events
-	- to do list
+- **Tammy** :weary:
+	- finally figured out DELETE EVENT
+	- made the menu continuous --> so more user friendly
+	- added colors into the terminal 
