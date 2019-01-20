@@ -330,8 +330,8 @@ public class OurCalendar extends CalendarViews {
             String output = listing.findEvent(Integer.parseInt(selection));
             FileInputStream instream = null;
             FileOutputStream outstream = null;
-      	    File infile =new File("test.csv");
-      	    File outfile =new File("tester2.csv");
+      	    File infile =new File("life.csv");
+      	    File outfile =new File("test.csv");
       	    instream = new FileInputStream(infile);
       	    outstream = new FileOutputStream(outfile);
       	    byte[] buffer = new byte[1024];
@@ -345,10 +345,12 @@ public class OurCalendar extends CalendarViews {
             BufferedReader test = new BufferedReader(new FileReader("test.csv"));
             String strCurrentLine;
             int index = 1;
+            OurCalendar clearer = new OurCalendar("tester2.csv");
+            clearer.clearAll();
             while ((strCurrentLine = br.readLine()) != null) {
               if (index != select){
                String[] neww = strCurrentLine.split(",");
-               FileWriter fwr = new FileWriter("tester2.csv", false);
+               FileWriter fwr = new FileWriter("tester2.csv", true);
                for (int i = 0; i < neww.length;i++){
                  fwr.write(neww[i]);
                  fwr.write(",");
