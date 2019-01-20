@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.*;
 import java.*;
+import java.nio.file.*;
 
 public class OurCalendar extends CalendarViews {
     private int year;
@@ -317,6 +318,7 @@ public class OurCalendar extends CalendarViews {
            System.out.print("Select the event you wish to" + ANSI_RED + " DELETE: " + ANSI_RESET);
            String selection = myReader.readLine();
            System.out.println(listing.findEvent(Integer.parseInt(selection)));
+           int select = Integer.parseInt(selection);
            System.out.println("Be aware that this deletes the event forever. You will not be able to recover it back! Would you still like to clear? (y/n)");
            String answer = myReader.readLine();
            while (!answer.equals("y") && !answer.equals("n")) {
@@ -325,7 +327,41 @@ public class OurCalendar extends CalendarViews {
            }
            if (answer.equals("y")){
             System.out.println("You are deleting: " + listing.findEvent(Integer.parseInt(selection)));
-            String [] arrofStr = (listing.findEvent(Integer.parseInt(selection))).split("|");
+            String output = listing.findEvent(Integer.parseInt(selection));
+            FileInputStream instream = null;
+            FileOutputStream outstream = null;
+      	    File infile =new File("test.csv");
+      	    File outfile =new File("tester2.csv");
+      	    instream = new FileInputStream(infile);
+      	    outstream = new FileOutputStream(outfile);
+      	    byte[] buffer = new byte[1024];
+      	    int length;
+            int count = 1;
+      	    while ((length = instream.read(buffer)) > 0){
+                outstream.write(buffer, 0, length);
+      	    }
+      	    instream.close();
+      	    outstream.close();
+            BufferedReader test = new BufferedReader(new FileReader("test.csv"));
+            String strCurrentLine;
+            int index = 1;
+            while ((strCurrentLine = br.readLine()) != null) {
+              if (index != select){
+               String[] neww = strCurrentLine.split(",");
+               FileWriter fwr = new FileWriter("tester2.csv", false);
+               for (int i = 0; i < neww.length;i++){
+                 fwr.write(neww[i]);
+                 fwr.write(",");
+               }
+               fwr.write("\n");
+               fwr.close();
+               System.out.println("H");
+             } index++;
+            }
+            test.close();
+      	    //System.out.println("File copied successfully!!");
+
+            //String [] arrofStr = (listing.findEvent(Integer.parseInt(selection))).split("|");
             //System.out.println(Arrays.toString(arrofStr));
             //System.out.println(arrofStr[1]);
 
