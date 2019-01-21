@@ -416,6 +416,7 @@ public class OurCalendar extends CalendarViews {
            System.out.println("-----------------------------------------------------------------------------------------");
            System.out.println("Thank you for being organized!");
            end = true;
+           System.out.println(ANSI_RESET);
            System.exit(1);
          }
          // ADDING EVENTS
