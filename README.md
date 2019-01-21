@@ -1,4 +1,5 @@
 # MKS21X-FinalProject
+Our final project goal is to create a program that acts as an interactive calendar and schedule planner in the terminal, where the user inputs would be stored inside a csv file. There is a menu at the start of the program to help out the user. There will be different types of the calendar views such as yearly, monthly, and weekly. There will also be ways the user can note/jot down an event/meeting scheduled for a specified day and it would be saved for the next time the user views their calendar. In case a wrong event was added, the user has an option of deleting it. Additionally, there will be an input the user can use in order to see their upcoming events in chronological, alphabetical and regular list order. There is also a TO-DO list that the user can use as well as a customize color option.  
 
 ## :date: INSTRUCTIONS
 Our project is an interactive calendar and planner. Please run the calendar by typing bash run.sh in the command line.
@@ -166,4 +167,4 @@ However, in the future, the program will clear the entire csv for a new user.
 - **Tammy** :weary:
 	- finally figured out DELETE EVENT
 	- made the menu continuous --> so more user friendly
-	- added colors into the terminal 
+	- added colors into the terminal
