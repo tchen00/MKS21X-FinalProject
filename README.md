@@ -7,7 +7,7 @@ To initiate our project, type the following in your terminal:
 bash run.sh
 ```
 **NOTE:** If you are on Windows, resize will not work SO size your terminal to full screen.
-	- A menu will pop up with options. Type the number of the option you would like to select. A csv file comes with the calendar, life.csv. Inside, there are already events listed for the purposes of testing.
+- A menu will pop up with options. Type the number of the option you would like to select. A csv file comes with the calendar, life.csv. Inside, there are already events listed for the purposes of testing.
 
 ## :memo: Development Logs  
 ### DAY 1 - Jan 3, 2019
