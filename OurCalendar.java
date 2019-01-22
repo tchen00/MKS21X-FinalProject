@@ -238,6 +238,11 @@ public class OurCalendar extends CalendarViews {
                  clearing.clearAll();
                  System.out.println("Cleared!");
                }
+               System.out.println(ANSI_WHITE_BACKGROUND + "                                                                                                                                                                                         " + ANSI_RESET);
+               System.out.println(color + "Welcome to your Calendar and Scheduling: " + "\n" + "Below is the menu: \n \t 1. Add an Event \n \t 2. Print Calendar View with Events \n \t 3. List All Upcoming Events \n \t 4. Delete Event \n \t 5. To Do List \n \t 6. Customize Color \n \t 7. Exit Program" );
+               System.out.println("\nIf you are a new user who would like to start afresh and delete all old data, please input clear down below");
+               System.out.print("\nPlease input your option: ");
+               input = myReader.readLine();
                //System.exit(1);
              }
              int inpu = Integer.parseInt(input);
@@ -463,6 +468,7 @@ public class OurCalendar extends CalendarViews {
               out.append(myYear);
               out.append(",");
               out.append(myMonth);
+              out.append(",");
               out.append(myDay);
               out.append(",");
               out.append(myStartTime);
