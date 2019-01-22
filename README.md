@@ -89,10 +89,6 @@ bash run.sh
 	- started using insertionSort to sort events alphabetically
 - **Tammy** :sob:
 	- added a validDay() method to check if user input in a valid date
-	- [ ] take into consideration all the user input for Time in the Driver (EXCEPTIONS!)
-		- make sure length is no more than 5
-		- search through string for : '/ split it / check to see if each individual char is a number  
-	- [ ] take into consideration AM and PM (or we could do military time)
 ### DAY 9 - Jan 11, 2019
 - **Grace** :octocat:
 	- completed insertionSortA for alphabatizing events, used in listEvent in OurCalendar
