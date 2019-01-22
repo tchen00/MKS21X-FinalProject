@@ -8,6 +8,8 @@ bash run.sh
 ```
 **NOTE:** If you are on Windows, resize will not work SO size your terminal to full screen.
 - A menu will pop up with options. Type the number of the option you would like to select. A csv file comes with the calendar, life.csv. Inside, there are already events listed for the purposes of testing.
+- You can clear the events and start afresh. Entering an invalid input will at times exit the program, in which case you will need to reinitiate the project.
+- Lastly, please input events with MILITARY TIME (8:00 am --> 08:00, 8:00 pm --> 20:00). Otherwise, listing your events chronologically will not function properly.
 
 ## :memo: Development Logs  
 ### DAY 1 - Jan 3, 2019
@@ -74,7 +76,6 @@ bash run.sh
 	- put in csv handler in Driver so Events can now be added into a CSV file
 		- for now, events are stored in life.csv
 	- made changes to prototype AGAIN! :no_mouth:
-
 ### DAY 7 - Jan 9, 2019
 - **Grace** :octocat:
 	- changed dot system for month view and added to life csv to test
@@ -165,3 +166,11 @@ bash run.sh
 	- finally figured out DELETE EVENT
 	- made the menu continuous --> so more user friendly
 	- added colors into the terminal
+### DAY 19 - Jan 21, 2019
+- **Grace AND Tammy** :octocat: :hatched-chick:
+	- finished up project
+	- tested for bugs
+	- edited instructions
+	- COMPLETION! :tada:
+
+PLEASE ENJOY OUR PROJECT!!
