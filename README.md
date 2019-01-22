@@ -167,7 +167,7 @@ bash run.sh
 	- made the menu continuous --> so more user friendly
 	- added colors into the terminal
 ### DAY 19 - Jan 21, 2019
-- **Grace AND Tammy** :octocat: :hatched-chick:
+- **Grace AND Tammy** :octocat: :hatched_chick:
 	- finished up project
 	- tested for bugs
 	- edited instructions
